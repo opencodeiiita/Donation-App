@@ -16,3 +16,7 @@ Github_id: insanecoder02
 
 Name: Gaurav Chhetri
 Github_id: Muffinboy19
+
+
+Name: Jai Khanna
+Github_id: CodinJack
