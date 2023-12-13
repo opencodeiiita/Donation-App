@@ -20,3 +20,6 @@ Github_id: Muffinboy19
 
 Name: Jai Khanna
 Github_id: CodinJack
+
+Name: Veerathu Sri Sindhu
+Github_id: Sindhu194
