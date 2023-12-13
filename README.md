@@ -43,11 +43,11 @@ Please help us follow the best practice to make it easy for the reviewer as well
 
 - Single commit per pull request and name the commit as something meaningful, example: Adding <-your-name-> in students/mentors section.
 
-- Reference the issue numbers in the commit message if it resolves an open issue. Follow the pattern Fixes #<issue number> <commit message>
+- Reference the issue numbers in the commit message if it resolves an open issue. Follow the pattern given in [PR_TEMPLATE.md](https://github.com/opencodeiiita/Donation-App/blob/master/PR_TEMPLATE.md)
 
 - Provide the link to live gh-pages from your forked repository or relevant screenshot for easier review.
 
-- Pull Request older than 3 days with no response from the contributor shall be marked closed.
+- Pull Request older than 2 days with no response from the contributor shall be marked closed.
 
 - Do not make PR which is not related to any issues. You can create an issue and solve it once we approve them.
 
