@@ -1,0 +1,23 @@
+Hello Contributors!!!
+
+This file contains the list of all the Participants who
+participated in contributing to Donation_App
+
+Add your name in this file in the following format-
+
+  Name: Participant Name
+  Github_id: GitHub User ID
+
+An example is provided for your reference.
+
+Name: Ishant Kumawat
+Github_id: insanecoder02
+
+
+Name: Gaurav Chhetri
+Github_id: Muffinboy19
+
+
+
+
+
