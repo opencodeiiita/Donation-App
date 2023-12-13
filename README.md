@@ -22,7 +22,7 @@ Comment on the issue. In case of no activity on the issue even after 2 days, the
 
 We welcome your contributions. Please follow the below guidelines while contributing to this project:
 
-1. Fork the repository and clone locally.
+1. Fork and star⭐ the repository and clone locally.
 2. Create an upstream remote and sync your local copy before your branch. See detailed instructions [here](https://help.github.com/articles/syncing-a-fork)
 3. Do the work and commit changes with good commit messages.
 4. Once you are confident in your work, create a pull request to the `master` branch of the upstream repository with proper descriptions explaining what you did and wait until we review it😊.
