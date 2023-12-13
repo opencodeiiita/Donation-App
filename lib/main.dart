@@ -5,18 +5,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp();
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
-        body: Center(
-
-          child: Image.asset('assets/newlogo.jpeg'),
-          // Replace "your_image.png" with the actual image filename
-        ),
+        backgroundColor: Colors.white,
       ),
     );
   }
