@@ -42,6 +42,9 @@ Github_id: illum1nadi
 Name :Pranav Bansal
 Github_id : PranavBansal21
 
+Name: Aryan Raj
+Github_id: Aryan4884
+
 Name :Vraj Shah
 Github_id : VrajShah34
 
@@ -59,3 +62,6 @@ Github_id: Satvik7773
 
 Name:Yuvraj Singh Kanoujia
 Github_id: yuvrajSingh930
+
+Name: Sarthak Verma
+Github_id: sarthakvermaa
