@@ -63,6 +63,9 @@ Github_id: Satvik7773
 Name: Anushka Pandit
 Github_id: anushkp1107
 
+Name: Shrutika Rathi
+Github_id: shrutikarathi6
+
 Name: Vibhor Agarwal
 Github_id: Vibhor-28
 
@@ -93,4 +96,5 @@ Github_id: vineeshmittal1
 
 Name: Rohit Pandey
 Github_id: Rohit-110
+
 
