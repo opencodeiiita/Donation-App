@@ -45,6 +45,9 @@ Github_id : PranavBansal21
 Name: Aryan Raj
 Github_id: Aryan4884
 
+Name :Vraj Shah
+Github_id : VrajShah34
+
 Name :Sanjay Paul
 Github_id :rebornstar1
 
@@ -53,3 +56,6 @@ Github_id: vasusingla545
 
 Name:Satvik Dubey
 Github_id: Satvik7773
+
+Name:Yuvraj Singh Kanoujia
+Github_id: yuvrajSingh930
