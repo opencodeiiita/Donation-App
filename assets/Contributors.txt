@@ -62,3 +62,6 @@ Github_id: yuvrajSingh930
 
 Name: Sarthak Verma
 Github_id: sarthakvermaa
+
+Name: Tejas Sharma
+Github_id: Tej-as1
