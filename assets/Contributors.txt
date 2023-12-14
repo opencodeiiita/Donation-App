@@ -24,6 +24,9 @@ Github_id: kushal7201
 Name: Jai Khanna
 Github_id: CodinJack
 
+Name: Parth Revanwar
+Github_id: theprocoder2367
+
 Name: Harshal Gainer
 Github_id: Harshal5167
 
@@ -39,9 +42,14 @@ Github_id: illum1nadi
 Name :Pranav Bansal
 Github_id : PranavBansal21
 
+Name :Sanjay Paul
+Github_id :rebornstar1
+
 Name: Vasu Singla
 Github_id: vasusingla545
 
 Name: Aman Kumar
 Github_id: Aman-iiita063
 
+Name:Satvik Dubey
+Github_id: Satvik7773
