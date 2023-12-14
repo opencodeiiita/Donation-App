@@ -65,3 +65,6 @@ Github_id: anushkp1107
 
 Name: Sarthak Verma
 Github_id: sarthakvermaa
+
+Name: Parth Kansagra
+Github_id: parth_1egend
