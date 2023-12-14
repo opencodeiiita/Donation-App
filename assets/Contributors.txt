@@ -54,6 +54,9 @@ Github_id :rebornstar1
 Name: Vasu Singla
 Github_id: vasusingla545
 
+Name: Ayush Krishna
+Github_id: Ayushk00
+
 Name:Satvik Dubey
 Github_id: Satvik7773
 
