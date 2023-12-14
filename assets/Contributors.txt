@@ -24,6 +24,9 @@ Github_id: kushal7201
 Name: Jai Khanna
 Github_id: CodinJack
 
+Name: Parth Revanwar
+Github_id: theprocoder2367
+
 Name: Harshal Gainer
 Github_id: Harshal5167
 
