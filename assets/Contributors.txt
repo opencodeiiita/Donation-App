@@ -50,3 +50,6 @@ Github_id: vasusingla545
 
 Name:Satvik Dubey
 Github_id: Satvik7773
+
+Name: Anushka Pandit
+Github_id: anushkp1107
