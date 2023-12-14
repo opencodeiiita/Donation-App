@@ -10,8 +10,12 @@ Add your name in this file in the following format-
 
 An example is provided for your reference.
 
-Name: Ishant Kumawat
+Name: Ishant Kumawat ish
 Github_id: insanecoder02
+
+
+Name: Sagnik Mandal
+Github_id: criticic
 
 
 Name: Gaurav Chhetri
@@ -60,12 +64,94 @@ Github_id: Ayushk00
 Name:Satvik Dubey
 Github_id: Satvik7773
 
+
+Name:Yuvraj Singh Kanoujia
+Github_id: yuvrajSingh930
+
+Name: Chirag malik
+Github_id: chiragmalik2612
+
 Name: Anushka Pandit
 Github_id: anushkp1107
+
+
+Name: Nivedh Biju Pazhayedathuparambil
+Github_id: Nivedh-Biju
+
+
+Name: Aryan Yadav
+Github_id: aryan0931
+
+Name: Shrutika Rathi
+Github_id: shrutikarathi6
+
+Name: Vibhor Agarwal
+Github_id: Vibhor-28
 
 Name: Sarthak Verma
 Github_id: sarthakvermaa
 
+
 Name: Arin Kulkarni
 Github_id: akoolarni
+
+
+Name: Nitu Sherawat
+Github_id: Nitu-Sherawat
+
+Name: Aditya Arya
+Github_id: arya-007
+
+Name: Tejas Sharma
+Github_id: Tej-as1
+
+
+
+Name: Poonam Gate
+Github_id: PoonamGate
+
+
+Name: Dikshant Khandelwal
+Github_id: DikshantK2004
+
+Name :Rudresh Dabre
+Github_id : Rudreshdabre12
+
+Name: Ajay Kumar
+Github_id: ajay484
+
+
+Name:Asher Ahmad
+Github_id: AshAhmad2022
+
+
+
+Name: Samar Anusimi
+Github_id: samaranusimi
+
+Name: Mansa Mahendru
+Github_id: Hannah2k23
+
+
+Name: Komal Pardasani
+Github_id: KomalPardasani
+
+Name: Nandini gupta
+Github_id: Nandinig24
+
+
+Name: Parth Kansagra
+Github_id: parth_1egend
+
+
+Name: Swati Shah
+Github_id: shahswati098
+
+Name: Vineesh Mittal
+Github_id: vineeshmittal1
+
+Name: Rohit Pandey
+Github_id: Rohit-110
+
+
 
