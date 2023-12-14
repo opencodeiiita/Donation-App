@@ -10,7 +10,7 @@ Add your name in this file in the following format-
 
 An example is provided for your reference.
 
-Name: Ishant Kumawat
+Name: Ishant Kumawat ish
 Github_id: insanecoder02
 
 
@@ -67,6 +67,10 @@ Name: Sarthak Verma
 Github_id: sarthakvermaa
 
 
+Name: Mansa Mahendru
+Github_id: Hannah2k23
+
+
 Name: Komal Pardasani
 Github_id: KomalPardasani
 
@@ -86,3 +90,4 @@ Github_id: vineeshmittal1
 
 Name: Rohit Pandey
 Github_id: Rohit-110
+
