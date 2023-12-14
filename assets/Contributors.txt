@@ -41,5 +41,9 @@ Name :Pranav Bansal
 Github_id : PranavBansal21
 
 
+Name: Vasu Singla
+Github_id: vasusingla545
+
+
 Name: Samar Anusimi
 Github_id: samaranusimi
