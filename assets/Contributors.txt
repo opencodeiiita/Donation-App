@@ -17,9 +17,18 @@ Github_id: insanecoder02
 Name: Gaurav Chhetri
 Github_id: Muffinboy19
 
+Name: Kushal Bansal
+Github_id: kushal7201
+
 
 Name: Jai Khanna
 Github_id: CodinJack
+
+
+
+
+Name: Veerathu Sri Sindhu
+Github_id: Sindhu194
 
 
 Name: Aditya Reddy
