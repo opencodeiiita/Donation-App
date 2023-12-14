@@ -17,10 +17,19 @@ Github_id: insanecoder02
 Name: Gaurav Chhetri
 Github_id: Muffinboy19
 
+Name: Kushal Bansal
+Github_id: kushal7201
+
 
 Name: Jai Khanna
 Github_id: CodinJack
 
 Name: Parth Revanwar
 Github_id: theprocoder2367
+
+Name: Veerathu Sri Sindhu
+Github_id: Sindhu194
+
+Name: Aditya Reddy
+Github_id: illum1nadi
 
