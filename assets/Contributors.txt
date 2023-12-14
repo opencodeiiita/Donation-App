@@ -13,6 +13,9 @@ An example is provided for your reference.
 Name: Ishant Kumawat ish
 Github_id: insanecoder02
 
+Name: Amitabh Singh
+Github_id: optimus-pride
+
 
 Name: Sagnik Mandal
 Github_id: criticic
