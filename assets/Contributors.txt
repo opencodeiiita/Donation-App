@@ -74,6 +74,9 @@ Github_id: chiragmalik2612
 Name: Anushka Pandit
 Github_id: anushkp1107
 
+Name:Piyush Tiwari
+Github_id: Piyush-raj-Tiwari
+
 
 Name: Nivedh Biju Pazhayedathuparambil
 Github_id: Nivedh-Biju
@@ -135,7 +138,6 @@ Github_id: Nandinig24
 Name: Parth Kansagra
 Github_id: parth_1egend
 
-
 Name: Swati Shah
 Github_id: shahswati098
 
@@ -148,4 +150,19 @@ Github_id: Rohit-110
 Name: Shreeta Mishra
 Github_id: apricity24
 
+Name: Ayush Sahu
+Github_id: Murdock9803
 
+Name: Buddhi Sagar Panjiyar
+Github_id: iam-buddhi
+
+
+Name: Dhruv Agrawal
+Github_id: DHRUVV23
+
+
+Name: Ashutosh Sahu
+Github_id: Ashutosh9993
+
+Name: Agatsya Narayanan
+Github_id: Agatsya0494
