@@ -60,8 +60,8 @@ Github_id: Ayushk00
 Name:Satvik Dubey
 Github_id: Satvik7773
 
-Name:Yuvraj Singh Kanoujia
-Github_id: yuvrajSingh930
+Name: Anushka Pandit
+Github_id: anushkp1107
 
 Name: Sarthak Verma
 Github_id: sarthakvermaa
