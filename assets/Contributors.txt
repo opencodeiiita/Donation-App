@@ -65,3 +65,6 @@ Github_id: anushkp1107
 
 Name: Sarthak Verma
 Github_id: sarthakvermaa
+
+Name: Komal Pardasani
+Github_id: KomalPardasani
