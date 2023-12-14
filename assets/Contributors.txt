@@ -56,3 +56,6 @@ Github_id: Satvik7773
 
 Name:Yuvraj Singh Kanoujia
 Github_id: yuvrajSingh930
+
+Name: Sarthak Verma
+Github_id: sarthakvermaa
