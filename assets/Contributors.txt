@@ -87,6 +87,10 @@ Github_id: Vibhor-28
 Name: Sarthak Verma
 Github_id: sarthakvermaa
 
+
+Name: Dikshant Khandelwal
+Github_id: DikshantK2004
+
 Name :Rudresh Dabre
 Github_id : Rudreshdabre12
 
@@ -125,5 +129,4 @@ Github_id: vineeshmittal1
 
 Name: Rohit Pandey
 Github_id: Rohit-110
-
 
