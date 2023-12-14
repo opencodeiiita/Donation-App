@@ -94,6 +94,9 @@ Github_id: Vibhor-28
 Name: Sarthak Verma
 Github_id: sarthakvermaa
 
+Name: Nishant Kale  
+Github_id: nishantkale22
+
 Name: Aditya Arya
 Github_id: arya-007
 
