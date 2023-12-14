@@ -42,6 +42,9 @@ Github_id: illum1nadi
 Name :Pranav Bansal
 Github_id : PranavBansal21
 
+Name :Vraj Shah
+Github_id : VrajShah34
+
 Name :Sanjay Paul
 Github_id :rebornstar1
 
@@ -49,7 +52,11 @@ Name: Vasu Singla
 Github_id: vasusingla545
 
 Name:Satvik Dubey
-Github_id: Satvik777
+Github_id: Satvik7773
 
 Name:Vertika Bajpai
 Github_id: VertikaBajpai
+
+Name:Yuvraj Singh Kanoujia
+Github_id: yuvrajSingh930
+>>>>>>> c1b55325a872199145bc680cdb57efa5b1501ac5
