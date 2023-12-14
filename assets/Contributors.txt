@@ -92,6 +92,10 @@ Name: Sarthak Verma
 Github_id: sarthakvermaa
 
 
+Name: Arin Kulkarni
+Github_id: akoolarni
+
+
 Name: Nitu Sherawat
 Github_id: Nitu-Sherawat
 
