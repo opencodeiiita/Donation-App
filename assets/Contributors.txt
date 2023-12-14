@@ -172,3 +172,6 @@ Github_id: Ashutosh9993
 
 Name: Agatsya Narayanan
 Github_id: Agatsya0494
+
+Name:Vertika Bajpai
+Github_id: VertikaBajpai
