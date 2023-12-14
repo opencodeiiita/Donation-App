@@ -176,8 +176,5 @@ Github_id: Agatsya0494
 Name:Vertika Bajpai
 Github_id: VertikaBajpai
 
-Name:Vertika Bajpai
-Github_id: VertikaBajpai
-
 Name: Samar Borkar
 Github_id: Samarborkar
