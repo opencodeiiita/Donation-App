@@ -67,9 +67,14 @@ Name: Sarthak Verma
 Github_id: sarthakvermaa
 
 
+Name: Parth Kansagra
+Github_id: parth_1egend
+
+
 Name: Swati Shah
 Github_id: shahswati098
 
 Name: Vineesh Mittal
 Github_id: vineeshmittal1
+
 
