@@ -24,23 +24,31 @@ class Splash_Screen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'images/logo.jpg',
-                  fit: BoxFit.cover,
-                  width: 200,
-                  height: 200,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
+                  child: Image.asset(
+                    'images/logo.jpg',
+                    fit: BoxFit.cover,
+                    width: 200,
+                    height: 200,
+                  ),
                 ),
                 SizedBox(
                   height: 120,
                 ),
                 const Text(
-                  '"Connect, donate, change lives"',
+                  '"Connect, Donate, Change Lives"',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontStyle: FontStyle.italic,
-                  ),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                      shadows: [
+                        Shadow(
+                            color: Colors.black,
+                            offset: Offset(6, 6),
+                            blurRadius: 15)
+                      ]),
                   textAlign: TextAlign.center,
                 ),
               ],
