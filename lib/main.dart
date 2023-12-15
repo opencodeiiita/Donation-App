@@ -1,3 +1,4 @@
+
 import 'package:donation_app/pages/splash.dart';
 import 'package:donation_app/login.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,7 @@ import 'profile_fragment.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomeActivity(),
+    home: Splash_Screen(),
   ));
 }
 
@@ -29,7 +30,14 @@ class _HomeActivityState extends State<HomeActivity> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false, home: Splash_Screen());
+
+
+
+    return MaterialApp(home: LoginScreen()
+        // Scaffold(
+        //   backgroundColor: Colors.white,
+
+        );
+
   }
 }
