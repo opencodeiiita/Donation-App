@@ -8,7 +8,7 @@ class Login_Page extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: Text("Login_Page",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48))),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50))),
     );
   }
 }
