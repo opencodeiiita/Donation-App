@@ -24,9 +24,11 @@ Github_id: criticic
 Name: Gaurav Chhetri
 Github_id: Muffinboy19
 
+Name: Arin Kulkarni
+Github_id: akoolarni
+
 Name: Kushal Bansal
 Github_id: kushal7201
-
 
 Name: Jai Khanna
 Github_id: CodinJack
@@ -107,7 +109,6 @@ Name: Tejas Sharma
 Github_id: Tej-as1
 
 
-
 Name: Poonam Gate
 Github_id: PoonamGate
 
@@ -172,3 +173,6 @@ Github_id: Ashutosh9993
 
 Name: Agatsya Narayanan
 Github_id: Agatsya0494
+
+Name:Vertika Bajpai
+Github_id: VertikaBajpai
