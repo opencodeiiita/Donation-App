@@ -1,3 +1,4 @@
+import 'package:donation_app/login.dart';
 import 'package:flutter/material.dart';
 import 'feed_fragment.dart';
 import 'donations_fragment.dart';
@@ -27,33 +28,11 @@ class _HomeActivityState extends State<HomeActivity> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Activity'),
-      ),
-      body: _fragments[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Feed',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Donations',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-      ),
-    );
+
+    return MaterialApp(home: LoginScreen()
+        // Scaffold(
+        //   backgroundColor: Colors.white,
+
+        );
   }
 }
