@@ -1,4 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:donation_app/login.dart';
 import 'package:donation_app/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -56,7 +57,7 @@ class Splash_Screen extends StatelessWidget {
           ),
         ),
         splashIconSize: 400,
-        nextScreen: Login_Page(),
+        nextScreen: LoginScreen(),
         duration: 3000,
         splashTransition: SplashTransition.scaleTransition,
         pageTransitionType: PageTransitionType.leftToRight,

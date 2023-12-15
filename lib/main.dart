@@ -36,6 +36,7 @@ class _HomeActivityState extends State<HomeActivity> {
     return MaterialApp(home: LoginScreen()
         // Scaffold(
         //   backgroundColor: Colors.white,
+        
 
         );
 
