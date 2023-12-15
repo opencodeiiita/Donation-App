@@ -1,5 +1,5 @@
 
-import 'package:donation_app/pages/splash.dart';
+import 'package:donation_app/splash.dart';
 import 'package:donation_app/login.dart';
 import 'package:flutter/material.dart';
 import 'feed_fragment.dart';
