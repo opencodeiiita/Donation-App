@@ -10,28 +10,171 @@ Add your name in this file in the following format-
 
 An example is provided for your reference.
 
-Name: Ishant Kumawat
+Name: Ishant Kumawat ish
 Github_id: insanecoder02
+
+Name: Amitabh Singh
+Github_id: optimus-pride
+
+
+Name: Sagnik Mandal
+Github_id: criticic
 
 
 Name: Gaurav Chhetri
 Github_id: Muffinboy19
 
+Name: Arin Kulkarni
+Github_id: akoolarni
+
 Name: Kushal Bansal
 Github_id: kushal7201
-
 
 Name: Jai Khanna
 Github_id: CodinJack
 
+Name: Parth Revanwar
+Github_id: theprocoder2367
+
+Name: Harshal Gainer
+Github_id: Harshal5167
+
+Name: Sushmitha
+Github_id: imsushmitha-13
 
 Name: Veerathu Sri Sindhu
 Github_id: Sindhu194
-
 
 Name: Aditya Reddy
 Github_id: illum1nadi
 
 
+Name :Pranav Bansal
+Github_id : PranavBansal21
+
+Name: Aryan Raj
+Github_id: Aryan4884
+
+Name :Vraj Shah
+Github_id : VrajShah34
+
+Name :Sanjay Paul
+Github_id :rebornstar1
+
+Name: Vasu Singla
+Github_id: vasusingla545
+
+Name: Ayush Krishna
+Github_id: Ayushk00
+
+Name:Satvik Dubey
+Github_id: Satvik7773
+
+
+Name:Yuvraj Singh Kanoujia
+Github_id: yuvrajSingh930
+
+Name: Chirag malik
+Github_id: chiragmalik2612
+
+Name: Anushka Pandit
+Github_id: anushkp1107
+
+Name:Piyush Tiwari
+Github_id: Piyush-raj-Tiwari
+
+
+Name: Nivedh Biju Pazhayedathuparambil
+Github_id: Nivedh-Biju
+
+
+Name: Aryan Yadav
+Github_id: aryan0931
+
+Name: Shrutika Rathi
+Github_id: shrutikarathi6
+
+Name: Vibhor Agarwal
+Github_id: Vibhor-28
+
+Name: Sarthak Verma
+Github_id: sarthakvermaa
+
+Name: Nishant Kale  
+Github_id: nishantkale22
+
+Name: Aditya Arya
+Github_id: arya-007
+
+Name: Tejas Sharma
+Github_id: Tej-as1
+
+
+Name: Poonam Gate
+Github_id: PoonamGate
+
+
+Name: Dikshant Khandelwal
+Github_id: DikshantK2004
+
+Name :Rudresh Dabre
+Github_id : Rudreshdabre12
+
+Name: Ajay Kumar
+Github_id: ajay484
+
+
+Name:Asher Ahmad
+Github_id: AshAhmad2022
+
+
+
 Name: Samar Anusimi
 Github_id: samaranusimi
+
+Name: Mansa Mahendru
+Github_id: Hannah2k23
+
+
+Name: Komal Pardasani
+Github_id: KomalPardasani
+
+Name: Nandini gupta
+Github_id: Nandinig24
+
+
+Name: Parth Kansagra
+Github_id: parth_1egend
+
+Name: Swati Shah
+Github_id: shahswati098
+
+Name: Vineesh Mittal
+Github_id: vineeshmittal1
+
+Name: Rohit Pandey
+Github_id: Rohit-110
+
+Name: Shreeta Mishra
+Github_id: apricity24
+
+Name: Ayush Sahu
+Github_id: Murdock9803
+
+Name: Buddhi Sagar Panjiyar
+Github_id: iam-buddhi
+
+
+Name: Dhruv Agrawal
+Github_id: DHRUVV23
+
+
+Name: Ashutosh Sahu
+Github_id: Ashutosh9993
+
+Name: Agatsya Narayanan
+Github_id: Agatsya0494
+
+Name:Vertika Bajpai
+Github_id: VertikaBajpai
+
