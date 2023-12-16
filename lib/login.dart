@@ -1,4 +1,6 @@
+import 'package:donation_app/home_activity.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -31,9 +33,6 @@ class _LoginScreen extends State<LoginScreen> {
                   "Enter phone number",
                   style: TextStyle(fontSize: 20),
                 ),
-                // SizedBox(
-                //   height: 6,
-                // ),
                 Container(
                   child: TextField(
                     controller: phoneController,
@@ -65,7 +64,16 @@ class _LoginScreen extends State<LoginScreen> {
                 Container(
                     alignment: Alignment.center,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        SharedPreferences pref =
+                            await SharedPreferences.getInstance();
+                        pref.setString("email", emailController.text);
+                        pref.setString("phonenumber", phoneController.text);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeActivity()));
+                      },
                       child: const Text("Login"),
                       style: ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
