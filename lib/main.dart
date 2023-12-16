@@ -1,3 +1,4 @@
+
 import 'package:donation_app/home_activity.dart';
 import 'package:donation_app/login.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return FutureBuilder<bool>(
       future: checkLoginStatus(),
       builder: (context, snapshot) {
@@ -34,6 +37,7 @@ class MyApp extends StatelessWidget {
             return LoginScreen();
         }
       },
+
     );
   }
 }
