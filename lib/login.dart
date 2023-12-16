@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'forgot_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -72,7 +73,23 @@ class _LoginScreen extends State<LoginScreen> {
                           Color.fromRGBO(219, 136, 224, 1),
                         ),
                       ),
-                    ))
+                    ),
+                ),
+                SizedBox(
+                  height: 45,
+                ),
+                 // Add the Forgot Password button
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ForgotPasswordScreen(),
+                    ),
+                  );
+                },
+                child: Text('Forgot Password?'),
+              ),
               ],
             )));
   }
