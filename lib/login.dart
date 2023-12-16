@@ -1,8 +1,8 @@
+import 'package:donation_app/forgot_password_screen.dart';
 import 'package:donation_app/home_activity.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -64,41 +64,41 @@ class _LoginScreen extends State<LoginScreen> {
                   height: 45,
                 ),
                 Container(
-                    alignment: Alignment.center,
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        SharedPreferences pref =
-                            await SharedPreferences.getInstance();
-                        pref.setString("email", emailController.text);
-                        pref.setString("phonenumber", phoneController.text);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const HomeActivity()));
-                      },
-                      child: const Text("Login"),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
-                          Color.fromRGBO(219, 136, 224, 1),
-                        ),
+                  alignment: Alignment.center,
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      SharedPreferences pref =
+                          await SharedPreferences.getInstance();
+                      pref.setString("email", emailController.text);
+                      pref.setString("phonenumber", phoneController.text);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeActivity()));
+                    },
+                    child: const Text("Login"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromRGBO(219, 136, 224, 1),
                       ),
                     ),
+                  ),
                 ),
                 SizedBox(
                   height: 45,
                 ),
-                 // Add the Forgot Password button
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ForgotPasswordScreen(),
-                    ),
-                  );
-                },
-                child: Text('Forgot Password?'),
-              ),
+                // Add the Forgot Password button
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ForgotPasswordScreen(),
+                      ),
+                    );
+                  },
+                  child: Text('Forgot Password?'),
+                ),
               ],
             )));
   }
