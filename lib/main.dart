@@ -31,8 +31,8 @@ class _HomeActivityState extends State<HomeActivity> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: LoginScreen(), debugShowCheckedModeBanner: false,
-      // Scaffold(
-      //   backgroundColor: Colors.white,
+       Scaffold(         //uncommented the commented Scaffold
+         backgroundColor: Colors.white,   //uncommented the properties
     );
   }
 }
