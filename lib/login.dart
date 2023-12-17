@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'forgot_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key ? key});
 
   State<StatefulWidget> createState() => _LoginScreen();
 }
@@ -32,9 +32,9 @@ class _LoginScreen extends State<LoginScreen> {
                   "Enter phone number",
                   style: TextStyle(fontSize: 20),
                 ),
-                // SizedBox(
-                //   height: 6,
-                // ),
+                 SizedBox(
+                   height: 6,
+                 ),
                 Container(
                   child: TextField(
                     controller: phoneController,
