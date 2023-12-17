@@ -64,32 +64,44 @@ class _LoginScreen extends State<LoginScreen> {
                   height: 45,
                 ),
                 Container(
-                    alignment: Alignment.center,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text("Login"),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
-                          Color.fromRGBO(219, 136, 224, 1),
-                        ),
+                  alignment: Alignment.center,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Login"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromRGBO(219, 136, 224, 1),
                       ),
                     ),
+                  ),
                 ),
                 SizedBox(
                   height: 45,
                 ),
-                 // Add the Forgot Password button
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ForgotPasswordScreen(),
-                    ),
-                  );
-                },
-                child: Text('Forgot Password?'),
-              ),
+                // Add the Forgot Password button
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ForgotPasswordScreen(),
+                      ),
+                    );
+                  },
+                  child: Text('Forgot Password?'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  child: Text('Go to Home'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
+                  child: Text('Go to Sign Up'),
+                ),
               ],
             )));
   }
