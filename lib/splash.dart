@@ -20,7 +20,7 @@ class Splash_Screen extends StatelessWidget {
         splash: Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.0), // here the value given is mostly in double data type
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
