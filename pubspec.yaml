@@ -30,8 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    firebase_core: ^1.10.6
-    firebase_auth: ^4.5.0
+  firebase_core: ^1.10.6 // indentation should be in the same column
+  firebase_auth: ^4.5.0  // indentation should be in the same column
 
 
   # The following adds the Cupertino Icons font to your application.

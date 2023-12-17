@@ -27,6 +27,7 @@ class _HomeActivityState extends State<HomeActivity> {
  ProfileFragment(),
  ];
 
+ 
  @override
  Widget build(BuildContext context) {
  return MaterialApp(
@@ -94,5 +95,15 @@ class _HomeActivityState extends State<HomeActivity> {
  },
  );
  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: LoginScreen(), debugShowCheckedModeBanner: false,
+       Scaffold(         //uncommented the commented Scaffold
+         backgroundColor: Colors.white,   //uncommented the properties
+    );
+  }
+      
 }
 
