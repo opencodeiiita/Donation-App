@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+
 import 'user.dart';
 
 class Login {
@@ -5,16 +7,14 @@ class Login {
 
   Login(this.users);
 
-  bool loginUser(String username, String password) {
-    // Check if the user exists
-    User user = users.firstWhere((user) => user.username == username, orElse: () => null);
+  bool? loginUser(String username, String password) {
+    User? user = users.firstWhere((user) => user.username == username);
 
     if (user == null) {
       print('User not found. Please check your username.');
-      return false;
+      return null;
     }
 
-    // Check if the password is correct
     if (user.password == password) {
       print('Login successful. Welcome back, $username!');
       return true;

@@ -9,7 +9,7 @@ class Splash_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
         colors: [Colors.deepOrange, Colors.orange],
         begin: Alignment.topLeft,
@@ -56,7 +56,7 @@ class Splash_Screen extends StatelessWidget {
           ),
         ),
         splashIconSize: 400,
-        nextScreen: LoginScreen(),
+        nextScreen: const MyLogin(),
         duration: 3000,
         splashTransition: SplashTransition.scaleTransition,
         pageTransitionType: PageTransitionType.leftToRight,

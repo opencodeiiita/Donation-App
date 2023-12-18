@@ -1,108 +1,139 @@
 import 'package:flutter/material.dart';
-import 'forgot_password_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key ? key});
+class MyLogin extends StatefulWidget {
+  const MyLogin({Key? key}) : super(key: key);
 
-  State<StatefulWidget> createState() => _LoginScreen();
+  @override
+  _MyLoginState createState() => _MyLoginState();
 }
 
-class _LoginScreen extends State<LoginScreen> {
-  TextEditingController phoneController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
+class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Login',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-          ),
-          backgroundColor: Color.fromRGBO(219, 136, 224, 1),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage('assets/images/IIIT-Allahabad-logo.webp')),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: [
+            Container(),
+            Container(
+              padding: EdgeInsets.only(left: 70, top: 180),
+              child: Text(
+                'Login Page',
+                style: TextStyle(color: Colors.black, fontSize: 50),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.4),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 35, right: 35),
+                      child: Column(
+                        children: [
+                          TextField(
+                            style: TextStyle(color: Colors.black87),
+                            decoration: InputDecoration(
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintText: "Enter your Email",
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                )
+
+                            ),
+
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          TextField(
+                            style: TextStyle(),
+                            obscureText: true,
+                            obscuringCharacter: '*',
+                            decoration: InputDecoration(
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintText: "Enter your Password",
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                )),
+                          ),
+                          SizedBox(
+                            height: 40,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(7.0),
+                                child: Text(
+                                  'Sign in',
+                                  style: TextStyle(
+                                      fontSize: 27, fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                              CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Colors.blueGrey,
+                                child: IconButton(
+                                    color: Colors.white,
+                                    onPressed: () {},
+                                    icon: SizedBox(
+                                      child: Icon(
+                                        Icons.arrow_circle_right,
+                                      ),)),)
+                            ],
+                          ),
+                          SizedBox(
+                            height: 40,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'register');
+                                },
+                                child: Text(
+                                  'Sign Up',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.black,
+                                      fontSize: 18),
+                                ),
+                                style: ButtonStyle(),
+                              ),
+                              TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Forgot Password',
+                                    style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                    ),
+                                  )),
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
-        body: Padding(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Enter phone number",
-                  style: TextStyle(fontSize: 20),
-                ),
-                 SizedBox(
-                   height: 6,
-                 ),
-                Container(
-                  child: TextField(
-                    controller: phoneController,
-                    decoration: const InputDecoration(
-                      labelText: 'Phone number',
-                      border: const UnderlineInputBorder(),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 45,
-                ),
-                Text(
-                  "Enter email id",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Container(
-                  child: TextField(
-                    controller: emailController,
-                    decoration: const InputDecoration(
-                      labelText: 'Email id',
-                      border: const UnderlineInputBorder(),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 45,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("Login"),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                        Color.fromRGBO(219, 136, 224, 1),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 45,
-                ),
-                // Add the Forgot Password button
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ForgotPasswordScreen(),
-                      ),
-                    );
-                  },
-                  child: Text('Forgot Password?'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
-                  },
-                  child: Text('Go to Home'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/signup');
-                  },
-                  child: Text('Go to Sign Up'),
-                ),
-              ],
-            )));
+      ),
+    );
   }
 }
