@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key ? key});
 
   State<StatefulWidget> createState() => _LoginScreen();
 }
@@ -35,6 +35,8 @@ class _LoginScreen extends State<LoginScreen> {
                   "Enter phone number",
                   style: TextStyle(fontSize: 20),
                 ),
+
+             
                 Container(
                   child: TextField(
                     controller: phoneController,
@@ -66,6 +68,7 @@ class _LoginScreen extends State<LoginScreen> {
                 Container(
                   alignment: Alignment.center,
                   child: ElevatedButton(
+
                     onPressed: () async {
                       SharedPreferences pref =
                           await SharedPreferences.getInstance();
@@ -76,6 +79,7 @@ class _LoginScreen extends State<LoginScreen> {
                           MaterialPageRoute(
                               builder: (context) => const HomeActivity()));
                     },
+
                     child: const Text("Login"),
                     style: ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
@@ -99,6 +103,7 @@ class _LoginScreen extends State<LoginScreen> {
                   },
                   child: Text('Forgot Password?'),
                 ),
+
               ],
             )));
   }
