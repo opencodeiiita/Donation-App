@@ -1,3 +1,4 @@
+import 'package:donation_app/get_started.dart';
 import 'package:flutter/material.dart';
 import 'splash.dart';
 import 'login.dart';
@@ -7,8 +8,8 @@ import 'donations_fragment.dart';
 import 'profile_fragment.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Splash_Screen(),
+  runApp(const MaterialApp(
+    home: GetStarted(),
   ));
 }
 
