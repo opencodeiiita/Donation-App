@@ -15,7 +15,7 @@ void main() {
 }
 
 class HomeActivity extends StatefulWidget {
-  const HomeActivity({Key? key}) : super(key: key);
+  const HomeActivity({super.key});
 
   @override
   _HomeActivityState createState() => _HomeActivityState();
@@ -25,7 +25,7 @@ class _HomeActivityState extends State<HomeActivity> {
   int _currentIndex = 0;
 
   final List<Widget> _fragments = [
-    FeedFragment(),
+    const FeedFragment(),
     DonationsFragment(),
     ProfileFragment(),
   ];
