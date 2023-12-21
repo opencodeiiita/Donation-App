@@ -69,6 +69,10 @@ flutter:
     - assets/images/asian_girl.jpg
     - assets/images/old_man.jpg
     - assets/images/african_child.jpg
+    - assets/google_logo.png
+    - assets/apple_logo.png
+    - assets/help.png
+    - assets/line.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
