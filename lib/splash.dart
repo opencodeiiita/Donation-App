@@ -1,7 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:donation_app/login.dart';
+import 'package:donation_app/twoscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 
 class Splash_Screen extends StatelessWidget {
   const Splash_Screen({Key? key});
@@ -74,6 +73,6 @@ class Splash_Screen extends StatelessWidget {
 
         //Color(RGBA(32,159,166,255))
         splashTransition: SplashTransition.scaleTransition,
-        nextScreen: MyLogin());
+        nextScreen: TwoScreen() );
   }
 }
