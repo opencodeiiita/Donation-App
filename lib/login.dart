@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:donation_app/signup_screen.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -47,7 +46,10 @@ class _MyLoginState extends State<MyLogin> {
                                 hintText: "Enter your Email",
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12),
-                                )),
+                                )
+
+                            ),
+
                           ),
                           SizedBox(
                             height: 30,
@@ -75,8 +77,7 @@ class _MyLoginState extends State<MyLogin> {
                                 child: Text(
                                   'Sign in',
                                   style: TextStyle(
-                                      fontSize: 27,
-                                      fontWeight: FontWeight.w700),
+                                      fontSize: 27, fontWeight: FontWeight.w700),
                                 ),
                               ),
                               CircleAvatar(
@@ -88,9 +89,7 @@ class _MyLoginState extends State<MyLogin> {
                                     icon: SizedBox(
                                       child: Icon(
                                         Icons.arrow_circle_right,
-                                      ),
-                                    )),
-                              )
+                                      ),)),)
                             ],
                           ),
                           SizedBox(
@@ -101,11 +100,7 @@ class _MyLoginState extends State<MyLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              SignUpScreen()));
+                                  Navigator.pushNamed(context, 'register');
                                 },
                                 child: Text(
                                   'Sign Up',
