@@ -357,6 +357,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  social_login_buttons:
+    dependency: "direct main"
+    description:
+      name: social_login_buttons
+      sha256: "052b88f1a9fed69430097093c02ed738a0fbf4c5fa4b0ed0ce4e8aa3caf592de"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.7"
   source_span:
     dependency: transitive
     description:
