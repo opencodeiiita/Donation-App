@@ -7,10 +7,14 @@ import 'feed_fragment.dart';
 import 'donations_fragment.dart';
 import 'profile_fragment.dart';
 import 'donation_page.dart';
+import 'side_Menu.dart';
+import 'package:rive/rive.dart';
+import 'package:donation_app/utils/riveutils.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: DonationPage(),
+  runApp(const MaterialApp(
+    // home: SideMenu(),
+    home: Splash_Screen(),
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -26,7 +30,7 @@ class _HomeActivityState extends State<HomeActivity> {
   int _currentIndex = 0;
 
   final List<Widget> _fragments = [
-    const FeedFragment(),
+    FeedFragment(),
     DonationsFragment(),
     ProfileFragment(),
   ];

@@ -1,3 +1,5 @@
+import 'package:donation_app/entry_point.dart';
+import 'package:donation_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:donation_app/signup_screen.dart';
 
@@ -84,7 +86,12 @@ class _MyLoginState extends State<MyLogin> {
                                 backgroundColor: Colors.blueGrey,
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => const HomepageStack()),
+                                      );
+                                    },
                                     icon: SizedBox(
                                       child: Icon(
                                         Icons.arrow_circle_right,
