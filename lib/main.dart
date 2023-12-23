@@ -6,6 +6,7 @@ import 'signup_screen.dart';
 import 'feed_fragment.dart';
 import 'donations_fragment.dart';
 import 'profile_fragment.dart';
+import 'donation_page.dart';
 import 'side_Menu.dart';
 import 'package:rive/rive.dart';
 import 'package:donation_app/utils/riveutils.dart';

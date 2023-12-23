@@ -41,6 +41,8 @@ dependencies:
   animated_splash_screen: ^1.3.0
   page_transition: ^2.1.0
   cached_network_image: ^3.3.0
+  social_login_buttons: ^1.0.7
+  video_player: ^2.8.1
 
 
 dev_dependencies:
