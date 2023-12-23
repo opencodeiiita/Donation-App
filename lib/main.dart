@@ -6,10 +6,11 @@ import 'signup_screen.dart';
 import 'feed_fragment.dart';
 import 'donations_fragment.dart';
 import 'profile_fragment.dart';
+import 'donation_page.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Splash_Screen(),
+  runApp(MaterialApp(
+    home: DonationPage(),
     debugShowCheckedModeBanner: false,
   ));
 }
