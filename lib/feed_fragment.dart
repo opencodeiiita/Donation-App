@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 const tealLikeColor = Color.fromARGB(255, 32, 159, 166);
 
-class FeedFragment extends StatelessWidget {
-  const FeedFragment({super.key});
+class FeedFragment extends StatefulWidget {
+  FeedFragment({super.key});
+
+  @override
+  State<FeedFragment> createState() => _FeedFragmentState();
+}
+
+class _FeedFragmentState extends State<FeedFragment> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +104,7 @@ class SearchAndMenuWidget extends StatelessWidget {
             color: tealLikeColor,
           ),
           child: IconButton(
-              onPressed: () {},
+              onPressed: (){},
               icon: const Icon(Icons.menu, color: Colors.white)),
         ),
         Ink(

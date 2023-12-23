@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  rive: 0.11.11
   flutter:
     sdk: flutter
   firebase_core: ^2.24.2
