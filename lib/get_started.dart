@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'package:donation_app/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
@@ -28,20 +30,28 @@ class GetStarted extends StatelessWidget {
             // Add some space between the text
             const SizedBox(height: 40),
             // Sub heading Text
-            const Text(
+            Text(
               'When we give cheerfully and accept gratefully, everyone is blessed.',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
-                color: Color(0xFFA6AFC2),
-                decoration: TextDecoration.none,
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: Color(0xFFA6AFC2),
+                  decoration: TextDecoration.none,
+                ),
               ),
             ),
             const SizedBox(height: 40),
             // Get Started Button
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignUpScreen()),
+                    (_) => false);
+              },
               // Set wisth of elevated button to 80% of screen width
               style: ElevatedButton.styleFrom(
                 // Increase font size
@@ -77,8 +87,11 @@ class _ImageSliderState extends State<ImageSlider> {
   int currentIndex = 0;
   List<String> images = [
     "asian_girl.jpg",
+    "children.jpg",
     "old_man.jpg",
-    "african_child.jpg"
+    "wheelchair.jpg",
+    "african_child.jpg",
+    "african2.jpg",
   ];
   Image _image = Image.asset("assets/images/asian_girl.jpg");
 
