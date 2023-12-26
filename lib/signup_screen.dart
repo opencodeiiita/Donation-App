@@ -1,7 +1,10 @@
-import 'package:donation_app/login.dart';
+import 'package:donation_app/baseHomeActivity.dart';
+import 'package:donation_app/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+
+import 'main.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -92,13 +95,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 70,
                         child: ElevatedButton(
                           onPressed: () {
-                            // CONTINUE BUTTON
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>  const basehomeActivity()),
+                            );
                           },
-                          child: Text('Continue',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400)),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF209FA6),
                             shape: const RoundedRectangleBorder(
@@ -106,6 +107,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   BorderRadius.all(Radius.circular(20)),
                             ),
                           ),
+                          child: const Text('Continue',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400)),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -151,7 +157,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const MyLogin(),
+                                  builder: (context) => const loginPage(),
                                 ),
                               );
                             },

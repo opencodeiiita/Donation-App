@@ -3,8 +3,8 @@ import 'package:donation_app/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class GetStarted extends StatelessWidget {
-  const GetStarted({super.key});
+class introPage3 extends StatelessWidget {
+  const introPage3({super.key});
 
   @override
   Widget build(BuildContext context) {

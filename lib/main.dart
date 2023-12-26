@@ -1,16 +1,16 @@
-import 'package:donation_app/get_started.dart';
 import 'package:flutter/material.dart';
 import 'splash.dart';
-import 'login.dart';
+import 'loginPage.dart';
 import 'signup_screen.dart';
-import 'feed_fragment.dart';
+import 'feedPage.dart';
 import 'donations_fragment.dart';
-import 'profile_fragment.dart';
-import 'donation_page.dart';
-import 'side_Menu.dart';
-import 'package:rive/rive.dart';
-import 'package:donation_app/utils/riveutils.dart';
+import 'profilePage.dart';
 
+
+
+/*
+this is the homepage which contains the bottom nav bar and other stuff
+ */
 void main() {
   runApp(const MaterialApp(
     // home: SideMenu(),
@@ -19,20 +19,20 @@ void main() {
   ));
 }
 
-class HomeActivity extends StatefulWidget {
-  const HomeActivity({super.key});
+class homePage extends StatefulWidget {
+  const homePage({super.key});
 
   @override
-  _HomeActivityState createState() => _HomeActivityState();
+  _homePageState createState() => _homePageState();
 }
 
-class _HomeActivityState extends State<HomeActivity> {
+class _homePageState extends State<homePage> {
   int _currentIndex = 0;
 
   final List<Widget> _fragments = [
-    FeedFragment(),
-    DonationsFragment(),
-    ProfileFragment(),
+    const feedPage(),
+    const DonationsFragment(),
+    const profilePage(),
   ];
 
   @override
@@ -69,7 +69,7 @@ class _HomeActivityState extends State<HomeActivity> {
         if (settings.name == '/login') {
           return PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                const MyLogin(),
+                const loginPage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               const begin = Offset(0.0, 1.0);
@@ -88,7 +88,7 @@ class _HomeActivityState extends State<HomeActivity> {
         } else if (settings.name == '/signup') {
           return PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                SignUpScreen(),
+                const SignUpScreen(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               const begin = Offset(0.0, 1.0);
@@ -107,7 +107,7 @@ class _HomeActivityState extends State<HomeActivity> {
         } else if (settings.name == '/home') {
           return PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                FeedFragment(),
+                const feedPage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               const begin = Offset(0.0, 1.0);
@@ -124,6 +124,7 @@ class _HomeActivityState extends State<HomeActivity> {
             },
           );
         }
+        return null;
         // Add other routes here
       },
     );

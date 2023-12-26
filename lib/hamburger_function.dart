@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'feed_fragment.dart';
-import 'package:rive/rive.dart';
 
-class MenuBtn extends StatelessWidget {
-  const MenuBtn({super.key, required this.press});
+class hamburger_function extends StatelessWidget {
+  const hamburger_function({super.key, required this.press});
 
   final VoidCallback press;
   // final ValueChanged<Artboard> riveoninit;

@@ -1,14 +1,20 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+/*
+this is the forgotpasswordScreen this is responsible for mangement of the forgot passowrd
+ */
 
 class ForgotPasswordScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
+
+  ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Forgot Password'),
+        title: const Text('Forgot Password'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -17,9 +23,9 @@ class ForgotPasswordScreen extends StatelessWidget {
           children: [
             TextField(
               controller: emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Email'),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () async {
                 try {
@@ -27,7 +33,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     email: emailController.text,
                   );
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text('Password reset email sent!'),
                     ),
                   );
@@ -39,7 +45,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   );
                 }
               },
-              child: Text('Reset Password'),
+              child: const Text('Reset Password'),
             ),
           ],
         ),

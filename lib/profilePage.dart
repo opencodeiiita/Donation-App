@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ProfileFragment extends StatelessWidget {
+class profilePage extends StatelessWidget {
+  const profilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Profile Fragment'),
     );
   }

@@ -1,19 +1,23 @@
-import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'loginPage.dart';
 
 const tealLikeColor = Color.fromARGB(255, 32, 159, 166);
 const whiteg =Color.fromARGB(255,222,240,241);
-class SideMenu extends StatefulWidget {
-  const SideMenu({super.key});
+
+
+/*
+this screen cotains all the buttons and code responsible for hte hamburrger menu
+ */
+class hamburgerMenu extends StatefulWidget {
+  const hamburgerMenu({super.key});
 
   @override
-  State<SideMenu> createState() => _SideMenuState();
+  State<hamburgerMenu> createState() => _hamburgerMenuState();
 }
 
-class _SideMenuState extends State<SideMenu> {
+class _hamburgerMenuState extends State<hamburgerMenu> {
   static const IconData logout_rounded = IconData(0xf88b, fontFamily: 'MaterialIcons');
   @override
   Widget build(BuildContext context) {
@@ -122,7 +126,7 @@ class _SideMenuState extends State<SideMenu> {
                     onPressed: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MyLogin()),
+                        MaterialPageRoute(builder: (context) => const loginPage()),
                       );
                     },
                     child: const Row(

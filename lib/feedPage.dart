@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
+
+
+/*
+this screen is responsible to show the feed it is a part of the screen which are displayed by the bottomnavbar
+ */
+
 const tealLikeColor = Color.fromARGB(255, 32, 159, 166);
 
-class FeedFragment extends StatefulWidget {
-  FeedFragment({super.key});
+class feedPage extends StatefulWidget {
+  const feedPage({super.key});
 
   @override
-  State<FeedFragment> createState() => _FeedFragmentState();
+  State<feedPage> createState() => _feedPageState();
 }
 
-class _FeedFragmentState extends State<FeedFragment> {
+class _feedPageState extends State<feedPage> {
 
 
   @override

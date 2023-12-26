@@ -1,18 +1,20 @@
-import 'package:donation_app/entry_point.dart';
-import 'package:donation_app/main.dart';
 import 'package:flutter/material.dart';
-import 'package:donation_app/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+/*
+this is the screen responsible for handling of the login actvity
 
-class MyLogin extends StatefulWidget {
-  const MyLogin({super.key});
+this page also conatins the code of the sign in activity to oo
+ */
+
+class loginPage extends StatefulWidget {
+  const loginPage({super.key});
 
   @override
-  _MyLoginState createState() => _MyLoginState();
+  _loginPageState createState() => _loginPageState();
 }
 
-class _MyLoginState extends State<MyLogin> {
+class _loginPageState extends State<loginPage> {
   final TextEditingController emailController = TextEditingController(text: "");
   final TextEditingController passwordController =
       TextEditingController(text: "");
@@ -140,11 +142,6 @@ class _MyLoginState extends State<MyLogin> {
                           onPressed: () {
                             // CONTINUE BUTTON
                           },
-                          child: Text('Continue',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400)),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF209FA6),
                             shape: const RoundedRectangleBorder(
@@ -152,6 +149,11 @@ class _MyLoginState extends State<MyLogin> {
                                   BorderRadius.all(Radius.circular(20)),
                             ),
                           ),
+                          child: const Text('Continue',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400)),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -197,7 +199,7 @@ class _MyLoginState extends State<MyLogin> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const MyLogin(),
+                                  builder: (context) => const loginPage(),
                                 ),
                               );
                             },

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,18 +18,18 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(
-            textScaleFactor: 1.0,
+            textScaler: const TextScaler.linear(1.0),
           ),
           child: child!,
         );
       },
-      home: SignInPage(),
+      home: const SignInPage(),
     );
   }
 }
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
+  const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,23 +68,23 @@ class SignInPage extends StatelessWidget {
               width: 250.0,
               height: 50.0,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 252, 252, 252),
+                color: const Color.fromARGB(255, 252, 252, 252),
                 border: Border.all(
-                  color: Color.fromARGB(255, 217, 241, 252),
+                  color: const Color.fromARGB(255, 217, 241, 252),
                   width: 1.0,
                 ),
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: TextFormField(
                 textAlign: TextAlign.center,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Your Email',
                   hintStyle: TextStyle(
                     color: Colors.grey,
                   ),
                   border: InputBorder.none,
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.grey,
                 ),
               ),
@@ -92,23 +94,23 @@ class SignInPage extends StatelessWidget {
               width: 250.0,
               height: 50.0,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 252, 252, 252),
+                color: const Color.fromARGB(255, 252, 252, 252),
                 border: Border.all(
-                  color: Color.fromARGB(255, 217, 241, 252),
+                  color: const Color.fromARGB(255, 217, 241, 252),
                   width: 1.0,
                 ),
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: TextFormField(
                 textAlign: TextAlign.center,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Enter Password',
                   hintStyle: TextStyle(
                     color: Colors.grey,
                   ),
                   border: InputBorder.none,
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.grey,
                 ),
               ),
@@ -116,16 +118,16 @@ class SignInPage extends StatelessWidget {
             const SizedBox(height: 15.0),
             ElevatedButton(
               onPressed: () {},
-              child: Text(
-                'Continue',
-                style: TextStyle(color: Colors.white),
-              ),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(257.0, 55.0),
-                backgroundColor: Color.fromARGB(255, 32, 159, 166),
+                backgroundColor: const Color.fromARGB(255, 32, 159, 166),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
+              ),
+              child: const Text(
+                'Continue',
+                style: TextStyle(color: Colors.white),
               ),
             ),
             const SizedBox(height: 20.0),
@@ -145,7 +147,7 @@ class SignInPage extends StatelessWidget {
                     height: 24.0,
                     width: 24.0,
                   ),
-                  label: Text(
+                  label: const Text(
                     'Sign in with Apple',
                     style: TextStyle(color: Colors.black),
                   ),
@@ -154,7 +156,7 @@ class SignInPage extends StatelessWidget {
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
-                      side: BorderSide(
+                      side: const BorderSide(
                         color: Color.fromARGB(255, 217, 241, 252),
                         width: 1.0,
                       ),
@@ -169,19 +171,19 @@ class SignInPage extends StatelessWidget {
                     height: 24.0,
                     width: 24.0,
                   ),
-                  label: Text(
+                  label: const Text(
                     'Sign in with Google',
                     style: TextStyle(color: Colors.blue),
                   ),
                   style: ElevatedButton.styleFrom(
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       color: Colors.white,
                     ),
                     minimumSize: const Size(257.0, 55.0),
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
-                      side: BorderSide(
+                      side: const BorderSide(
                         color: Color.fromARGB(255, 217, 241, 252),
                         width: 1.0,
                       ),
@@ -194,7 +196,7 @@ class SignInPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'New User?',
                   style: TextStyle(
                     color: Colors.grey,
@@ -202,7 +204,7 @@ class SignInPage extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Create Account',
                     style: TextStyle(
                       color: Color.fromARGB(255, 32, 159, 166),

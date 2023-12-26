@@ -4,6 +4,10 @@ import 'package:video_player/video_player.dart';
 class DonationsFragment extends StatelessWidget {
   const DonationsFragment({super.key});
 
+
+  // i think this is the page should not contain this code as it is just  screen which is holding the data , it cannot show donation details
+  // as the donation detaliss are show by the DonationDetails.dart file
+
   static List random_images = [
     'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg',
     'https://pbs.twimg.com/profile_images/1249432648684109824/J0k1DN1T_400x400.jpg',
@@ -119,7 +123,7 @@ class DonationsFragment extends StatelessWidget {
                         children: [
                           for (int i = 0; i < random_images.length; i++)
                             Container(
-                                margin: EdgeInsets.symmetric(horizontal: 0),
+                                margin: const EdgeInsets.symmetric(horizontal: 0),
                                 child: Align(
                                   heightFactor: 0.75,
                                   child: CircleAvatar(
@@ -130,7 +134,7 @@ class DonationsFragment extends StatelessWidget {
                                   ),
                                 )),
                           Container(
-                              margin: EdgeInsets.symmetric(horizontal: 0),
+                              margin: const EdgeInsets.symmetric(horizontal: 0),
                               child: const Align(
                                 heightFactor: 0.5,
                                 child: CircleAvatar(
@@ -261,7 +265,7 @@ class DonationsFragment extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 height: 70,
                 child: ElevatedButton(
                   onPressed: () {},
@@ -364,7 +368,7 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
                         _controller.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
-                        color: Color(0xff209fa6),
+                        color: const Color(0xff209fa6),
                       ),
                     ),
                   ),

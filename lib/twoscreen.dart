@@ -1,8 +1,5 @@
-import 'package:donation_app/get_started.dart';
-import 'package:donation_app/main.dart';
-import 'package:donation_app/signup_screen.dart';
+import 'package:donation_app/introPage3.dart';
 import 'package:flutter/material.dart';
-import 'package:donation_app/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TwoScreen extends StatefulWidget {
@@ -150,7 +147,7 @@ class PageScreen extends StatelessWidget {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const GetStarted()),
+                              builder: (context) => const introPage3()),
                           (_) => false);
                     }
                   },
