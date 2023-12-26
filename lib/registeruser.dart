@@ -13,7 +13,7 @@ class Login {
     );
 
     // Check if the user exists and if the password is correct
-    if (user != null && user.password == password) {
+    if (user.password == password) {
       print('Login successful. Welcome back, $username!');
       return true;
     } else {

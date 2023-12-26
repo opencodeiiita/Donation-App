@@ -94,11 +94,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           onPressed: () {
                             // CONTINUE BUTTON
                           },
-                          child: Text('Continue',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400)),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF209FA6),
                             shape: const RoundedRectangleBorder(
@@ -106,6 +101,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   BorderRadius.all(Radius.circular(20)),
                             ),
                           ),
+                          child: const Text('Continue',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400)),
                         ),
                       ),
                       const SizedBox(height: 20),

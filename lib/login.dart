@@ -1,7 +1,4 @@
-import 'package:donation_app/entry_point.dart';
-import 'package:donation_app/main.dart';
 import 'package:flutter/material.dart';
-import 'package:donation_app/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 
@@ -140,11 +137,6 @@ class _MyLoginState extends State<MyLogin> {
                           onPressed: () {
                             // CONTINUE BUTTON
                           },
-                          child: Text('Continue',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400)),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF209FA6),
                             shape: const RoundedRectangleBorder(
@@ -152,6 +144,11 @@ class _MyLoginState extends State<MyLogin> {
                                   BorderRadius.all(Radius.circular(20)),
                             ),
                           ),
+                          child: const Text('Continue',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400)),
                         ),
                       ),
                       const SizedBox(height: 20),

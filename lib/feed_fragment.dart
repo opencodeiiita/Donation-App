@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 const tealLikeColor = Color.fromARGB(255, 32, 159, 166);
 
 class FeedFragment extends StatefulWidget {
-  FeedFragment({super.key});
+  const FeedFragment({super.key});
 
   @override
   State<FeedFragment> createState() => _FeedFragmentState();

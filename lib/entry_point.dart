@@ -1,14 +1,9 @@
-import 'dart:ffi';
 
 import 'package:donation_app/main.dart';
 import 'package:donation_app/side_Menu.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-import 'package:donation_app/feed_fragment.dart';
-import 'package:donation_app/main.dart';
 import 'menubutton.dart';
-import 'package:rive/rive.dart';
-import 'package:donation_app/utils/riveutils.dart';
 
 
 class HomepageStack extends StatefulWidget {
@@ -59,7 +54,7 @@ class _HomepageStackState extends State<HomepageStack> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255,32,159,166),
+      backgroundColor: const Color.fromARGB(255,32,159,166),
       resizeToAvoidBottomInset: false,
       extendBody: true,
       body: Stack(
@@ -67,20 +62,20 @@ class _HomepageStackState extends State<HomepageStack> with SingleTickerProvider
           AnimatedPositioned(
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
-            child: SideMenu(),
             width: 270,
             left: isSideMenuClosed ? -288 : 0 ,
             height: MediaQuery.of(context).size.height,
+            child: const SideMenu(),
           ),
           Transform.translate(
               offset: Offset(animation.value*270,0),
               child: Transform.scale(
+                scale: scalAnimation.value,
                 child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(isSideMenuClosed?0:24)),
-                    child: HomeActivity(
+                    child: const HomeActivity(
                     ),
                 ),
-                scale: scalAnimation.value,
               )
           ),
           MenuBtn(

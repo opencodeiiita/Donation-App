@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class DonationPage extends StatelessWidget {
-  const DonationPage({Key? key}) : super(key: key);
+  const DonationPage({super.key});
 
   static List random_images = [
     'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg',
@@ -119,7 +119,7 @@ class DonationPage extends StatelessWidget {
                         children: [
                           for (int i = 0; i < random_images.length; i++)
                             Container(
-                                margin: EdgeInsets.symmetric(horizontal: 0),
+                                margin: const EdgeInsets.symmetric(horizontal: 0),
                                 child: Align(
                                   heightFactor: 0.75,
                                   child: CircleAvatar(
@@ -130,7 +130,7 @@ class DonationPage extends StatelessWidget {
                                   ),
                                 )),
                           Container(
-                              margin: EdgeInsets.symmetric(horizontal: 0),
+                              margin: const EdgeInsets.symmetric(horizontal: 0),
                               child: const Align(
                                 heightFactor: 0.5,
                                 child: CircleAvatar(
@@ -261,7 +261,7 @@ class DonationPage extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 height: 70,
                 child: ElevatedButton(
                   onPressed: () {},
@@ -364,7 +364,7 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
                         _controller.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
-                        color: Color(0xff209fa6),
+                        color: const Color(0xff209fa6),
                       ),
                     ),
                   ),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'feed_fragment.dart';
-import 'package:rive/rive.dart';
 
 class MenuBtn extends StatelessWidget {
   const MenuBtn({super.key, required this.press});
