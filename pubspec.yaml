@@ -43,6 +43,7 @@ dependencies:
   cached_network_image: ^3.3.0
   social_login_buttons: ^1.0.7
   video_player: ^2.8.1
+  google_fonts: ^6.1.0
 
 
 dev_dependencies:
@@ -72,10 +73,15 @@ flutter:
     - assets/images/asian_girl.jpg
     - assets/images/old_man.jpg
     - assets/images/african_child.jpg
+    - assets/images/children.jpg
+    - assets/images/wheelchair.jpg
+    - assets/images/african2.jpg
     - assets/google_logo.png
     - assets/apple_logo.png
     - assets/help.png
     - assets/line.png
+    - assets/images/screen1.png
+    - assets/images/screen2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

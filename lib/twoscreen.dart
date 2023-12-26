@@ -1,83 +1,124 @@
+import 'package:donation_app/get_started.dart';
+import 'package:donation_app/main.dart';
+import 'package:donation_app/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:donation_app/login.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TwoScreen extends StatefulWidget {
+  const TwoScreen({super.key});
+
   @override
   _TwoScreenState createState() => _TwoScreenState();
 }
 
 class _TwoScreenState extends State<TwoScreen> {
+  final PageController _pageController = PageController(initialPage: 0);
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        children: [
-          buildPage(
-            images: [
-              'assets/images/asian_girl.jpg',
-              'assets/images/asian_girl.jpg',
-              'assets/images/asian_girl.jpg',
-              'assets/images/asian_girl.jpg',
-            ],
-            title: 'We Can help poor people',
-            description: 'When we give cheerfully and accept gratefully, everyone is blessed',
-          ),
-        ],
-      ),
-    );
+        body: PageView(
+      controller: _pageController,
+      children: [
+        PageScreen(
+            image: 'assets/images/screen1.png',
+            titl1: "Let's Help",
+            titl2: "Each Others",
+            next: () {
+              _pageController.animateToPage(
+                1,
+                duration: const Duration(
+                    milliseconds:
+                        1000), // You can adjust the duration as needed
+                curve: Curves.ease,
+              );
+            }),
+        const PageScreen(
+            image: 'assets/images/screen2.png',
+            titl1: "We Can Help",
+            titl2: 'Poor People',
+            next: null)
+      ],
+    ));
   }
+}
 
-  Widget buildPage({required List<String> images, required String title, required String description, Widget? nextPage}) {
+class PageScreen extends StatelessWidget {
+  final String image;
+  final String titl1;
+  final String titl2;
+  final Function? next;
+
+  const PageScreen(
+      {super.key,
+      required this.image,
+      required this.titl1,
+      required this.titl2,
+      required this.next});
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: images.length == 4 ? 2 : 4,
-                crossAxisSpacing: 16.0,
-                mainAxisSpacing: 16.0,
-              ),
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    elevation: 4.0,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(12.0),
-                      child: Image.asset(
-                        images[index],
-                        width: double.infinity,
-                        height: double.infinity,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                );
-              },
-              itemCount: images.length,
-              shrinkWrap: true,
-            ),
-          ),
+              padding: const EdgeInsets.only(top: 50),
+              child: Image.asset(image)),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                DefaultTextStyle(
-                  style: const TextStyle(fontSize: 24, color: Colors.lightBlue, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                Text(
+                  titl1,
+                  style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                    fontSize: 45,
+                    color: Color.fromARGB(255, 26, 36, 65),
+                    fontWeight: FontWeight.w500,
+                  )),
                   textAlign: TextAlign.center,
-                  child: Text(title),
                 ),
-                const SizedBox(height: 10),
-                DefaultTextStyle(
-                  style: const TextStyle(fontSize: 12, color: Colors.grey, fontStyle: FontStyle.normal),
+                Text(
+                  titl2,
+                  style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                    fontSize: 45,
+                    color: Color.fromARGB(255, 26, 36, 65),
+                    fontWeight: FontWeight.w500,
+                  )),
                   textAlign: TextAlign.center,
-                  child: Text(description),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  'When we give cheerfully and accept',
+                  style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 174, 182, 199),
+                    fontWeight: FontWeight.normal,
+                  )),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'gratefully, everyone is blessed',
+                  style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 174, 182, 199),
+                    fontWeight: FontWeight.normal,
+                  )),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -88,8 +129,8 @@ class _TwoScreenState extends State<TwoScreen> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: Colors.black, 
-                width: 2.0, 
+                color: const Color.fromARGB(255, 32, 159, 166),
+                width: 0.5,
               ),
             ),
             child: Align(
@@ -103,44 +144,26 @@ class _TwoScreenState extends State<TwoScreen> {
                 ),
                 child: IconButton(
                   onPressed: () {
-                    if (nextPage != null) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => nextPage),
-                      );
+                    if (next != null) {
+                      next!();
                     } else {
-                      navigateToDefaultPage();
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const GetStarted()),
+                          (_) => false);
                     }
                   },
-                  icon: const Icon(Icons.arrow_forward, color: Colors.white),
+                  icon: const Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Colors.white,
+                    size: 30,
+                  ),
                 ),
               ),
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  void navigateToDefaultPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => buildPage(
-          images: [
-            'assets/images/asian_girl.jpg',
-            'assets/images/asian_girl.jpg',
-            'assets/images/asian_girl.jpg',
-            'assets/images/asian_girl.jpg',
-            'assets/images/asian_girl.jpg',
-            'assets/images/asian_girl.jpg',
-            'assets/images/asian_girl.jpg',
-            'assets/images/asian_girl.jpg',
-          ],
-          title: "Let's Help Each Other",
-          description: 'When we give cheerfully and accept gratefully, everyone is blessed',
-          nextPage: MyLogin(),
-        ),
       ),
     );
   }
