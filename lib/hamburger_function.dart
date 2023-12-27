@@ -4,7 +4,6 @@ class hamburger_function extends StatelessWidget {
   const hamburger_function({super.key, required this.press});
 
   final VoidCallback press;
-  // final ValueChanged<Artboard> riveoninit;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +12,7 @@ class hamburger_function extends StatelessWidget {
       child: SafeArea(
             child: GestureDetector(
               onTap: press,
-              child: Ink(
-
+              child: Container(
                 decoration: const ShapeDecoration(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.horizontal(
@@ -22,7 +20,7 @@ class hamburger_function extends StatelessWidget {
                       right: Radius.circular(20),
                     ),
                   ),
-                  color: Color.fromARGB(255,141,208,211),
+                  color: Color.fromARGB(255, 32, 159, 166),
                 ),
                 child: IconButton(
                     onPressed: press,

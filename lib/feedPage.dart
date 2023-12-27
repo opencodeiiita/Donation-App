@@ -20,71 +20,167 @@ class _feedPageState extends State<feedPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-              child: SearchAndMenuWidget(),
-            ),
-            StartFundingButton(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  CategoryButton(
-                    icon: Icons.apps,
-                    label: 'All',
-                    color: Colors.blue,
-                  ),
-                  CategoryButton(
-                    icon: Icons.local_hospital,
-                    label: 'Medical',
-                    color: Colors.teal,
-                  ),
-                  CategoryButton(
-                    icon: Icons.school,
-                    label: 'Education',
-                    color: Colors.orange,
-                  ),
-                  CategoryButton(
-                    icon: Icons.masks,
-                    label: 'Pandemic',
-                    color: Colors.red,
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                child: SearchAndMenuWidget(),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 20,
-                left: 20,
-                right: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Popular',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 26,
-                      fontWeight: FontWeight.w500,
+              StartFundingButton(),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    CategoryButton(
+                      icon: Icons.apps,
+                      label: 'All',
+                      color: Colors.blue,
                     ),
-                  ),
-                  Text("See All",
-                      style: TextStyle(
-                        color: tealLikeColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ))
-                ],
+                    CategoryButton(
+                      icon: Icons.local_hospital,
+                      label: 'Medical',
+                      color: Colors.teal,
+                    ),
+                    CategoryButton(
+                      icon: Icons.school,
+                      label: 'Education',
+                      color: Colors.orange,
+                    ),
+                    CategoryButton(
+                      icon: Icons.masks,
+                      label: 'Pandemic',
+                      color: Colors.red,
+                    ),
+                  ],
+                ),
               ),
-            )
-          ],
+              const Padding(
+                padding: EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Popular',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 26,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text("See All",
+                        style: TextStyle(
+                          color: tealLikeColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        )
+                      )
+                    ],
+                  ),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: 5,
+                  itemBuilder: (context,index){
+                    return Container(
+                      height: 260,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 250, 250, 255),
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(width: 1, color: Colors.lightBlueAccent),
+                      ),
+                      margin: EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
+                      child: Padding(
+                        padding:  EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Container(
+                              height: 100,
+                              padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Image(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                    'assets/images/screen1.png',
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    child: Text(
+                                      'Education Dono for poor child',
+                                      softWrap: true,
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(child: SizedBox(),flex:1,),
+                              ],
+                            ),
+                            Text(
+                              'By IIITA',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.blueGrey
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      child: Text(
+                                        '\$ 4525 Raised ',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color.fromARGB(255, 32, 159, 166),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      child: Text(
+                                        'Target-\$10000',
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+                ),
+            ],
+          ),
         ),
       ),
     );
