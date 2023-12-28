@@ -13,7 +13,6 @@ this is the homepage which contains the bottom nav bar and other stuff
  */
 void main() {
   runApp(const MaterialApp(
-    // home: SideMenu(),
     home: Splash_Screen(),
     debugShowCheckedModeBanner: false,
   ));

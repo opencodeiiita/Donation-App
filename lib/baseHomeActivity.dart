@@ -26,6 +26,7 @@ class _basehomeActivityState extends State<basehomeActivity> with SingleTickerPr
   late AnimationController _animationController;
   late Animation<double> animation;
   late Animation<double> scalAnimation;
+  late Animation<double> borderanimation;
 
   @override
   void initState() {
@@ -39,6 +40,10 @@ class _basehomeActivityState extends State<basehomeActivity> with SingleTickerPr
     });
 
     animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _animationController
+          , curve: Curves.fastOutSlowIn),
+    );
+    borderanimation = Tween<double>(begin: 0, end: 24).animate(
       CurvedAnimation(parent: _animationController
           , curve: Curves.fastOutSlowIn),
     );
@@ -76,7 +81,7 @@ class _basehomeActivityState extends State<basehomeActivity> with SingleTickerPr
               child: Transform.scale(
                 scale: scalAnimation.value,
                 child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(isSideMenuClosed?0:24)),
+                    borderRadius: BorderRadius.all(Radius.circular(borderanimation.value)),
                     child: const homePage(
                     ),
                 ),

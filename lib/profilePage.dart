@@ -5,8 +5,8 @@ class profilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Profile Fragment'),
+    return Center(
+      child: const Text("Profile page"),
     );
   }
 }
