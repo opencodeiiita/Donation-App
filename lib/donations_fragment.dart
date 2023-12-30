@@ -18,29 +18,18 @@ class DonationsFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Donations", style: TextStyle(color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.w600),),
+        leading: BackButton(),
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.share),)
+        ],
+        backgroundColor: Colors.white,
+      ),
       body: SafeArea(
-        minimum: const EdgeInsets.all(25),
+        minimum: const EdgeInsets.fromLTRB(25, 0, 25, 25),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Back',
-                    style: TextStyle(color: Color(0xff1A2441), fontSize: 14.0),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Share',
-                    style: TextStyle(color: Color(0xff1A2441), fontSize: 14.0),
-                  ),
-                ),
-              ],
-            ),
             Expanded(
                 child: SingleChildScrollView(
               child: Column(
@@ -50,37 +39,42 @@ class DonationsFragment extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 270,
-                        width: 180,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: const NetworkImage(
-                                  'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg'),
-                              fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(
-                                  Colors.black.withOpacity(0.5),
-                                  BlendMode.darken),
+                      Expanded(
+                        child: Container(
+                          height: 270,
+                          width: 180,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: const NetworkImage(
+                                    'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg'),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(
+                                    Colors.black.withOpacity(0.5),
+                                    BlendMode.darken),
+                              ),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: const Center(
+                            child: Text(
+                              "10+ \nImage",
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const Center(
-                          child: Text(
-                            "10+ \nImage",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-                      Container(
-                        height: 270,
-                        width: 180,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const VideoPlayerWidget(),
+                      SizedBox(width: 10,),
+                      Expanded(
+                        child: Container(
+                          height: 270,
+                          width: 180,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30)),
+                          child: const VideoPlayerWidget(),
+                        ),
                       ),
                     ],
                   ),
