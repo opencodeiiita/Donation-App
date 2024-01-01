@@ -53,13 +53,15 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appbar is not required? how to remove it? (automaticallyImplyLeading: false,)
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
-      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
+          Container(
+            height: 40, // Adjust the height as needed
+            child: AppBar(
+              automaticallyImplyLeading: false,
+              backgroundColor: Colors.transparent,
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -81,7 +83,7 @@ class _loginPageState extends State<loginPage> {
               ),
             ],
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -92,9 +94,11 @@ class _loginPageState extends State<loginPage> {
                     children: [
                       const Text('Sign In',
                           style: TextStyle(
-                              fontSize: 50, fontWeight: FontWeight.w500)),
+                              fontSize: 40, fontWeight: FontWeight.w500)),
                       const SizedBox(height: 35),
-                      TextField(
+                      Container(
+                      height: 55,
+                      child: TextField(
                         controller: emailController,
                         textAlign: TextAlign.center,
                         cursorColor: const Color.fromARGB(255, 32, 159, 166),
@@ -123,8 +127,11 @@ class _loginPageState extends State<loginPage> {
                           ),
                         ),
                       ),
+                      ),
                       const SizedBox(height: 20),
-                      TextField(
+                      Container(
+                        height: 55,
+                        child: TextField(
                         controller: passwordController,
                         textAlign: TextAlign.center,
                         cursorColor: const Color.fromARGB(255, 32, 159, 166),
@@ -152,6 +159,7 @@ class _loginPageState extends State<loginPage> {
                             ),
                           ),
                         ),
+                      ),
                       ),
                       const SizedBox(height: 20),
                       SizedBox(
