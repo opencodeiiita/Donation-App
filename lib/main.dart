@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'splash.dart';
 import 'loginPage.dart';
@@ -11,7 +12,13 @@ import 'profilePage.dart';
 /*
 this is the homepage which contains the bottom nav bar and other stuff
  */
-void main() {
+import 'firebase_options.dart';
+
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MaterialApp(
     home: Splash_Screen(),
     debugShowCheckedModeBanner: false,
