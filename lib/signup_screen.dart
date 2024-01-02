@@ -1,10 +1,8 @@
-import 'package:donation_app/baseHomeActivity.dart';
 import 'package:donation_app/loginPage.dart';
+import 'package:donation_app/password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
-
-import 'main.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -97,7 +95,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) =>  const basehomeActivity()),
+                              MaterialPageRoute(builder: (context) =>  PasswordScreen(emailController.text)),
                             );
                           },
                           style: ElevatedButton.styleFrom(
