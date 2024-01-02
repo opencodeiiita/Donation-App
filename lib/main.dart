@@ -12,12 +12,12 @@ import 'firebase_options.dart';
 /*
 this is the homepage which contains the bottom nav bar and other stuff
  */
+
+import 'firebase_options.dart';
+
 void main() async {
-
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MaterialApp(
     home: Splash_Screen(),
     debugShowCheckedModeBanner: false,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'baseHomeActivity.dart';
 /*
 this is the screen responsible for handling of the login actvity
 
@@ -14,10 +17,26 @@ class loginPage extends StatefulWidget {
   _loginPageState createState() => _loginPageState();
 }
 
+Future<void> signInUser(String email, String password) async {
+  try {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+  } on FirebaseAuthException catch (e) {
+    if (e.code == 'invalid-email') {
+      Fluttertoast.showToast(msg: 'Email format is incorrect!');
+    } else if (e.code == 'invalid-credential') {
+      Fluttertoast.showToast(msg: 'Invalid Credentials');
+    }
+    Fluttertoast.showToast(msg: "ERROR! Please try after some time");
+    throw e;
+  }
+}
+
 class _loginPageState extends State<loginPage> {
   final TextEditingController emailController = TextEditingController(text: "");
-  final TextEditingController passwordController =
-      TextEditingController(text: "");
+  final TextEditingController passwordController = TextEditingController(text: "");
 
   @override
   void initState() {
@@ -34,13 +53,15 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appbar is not required? how to remove it? (automaticallyImplyLeading: false,)
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
-      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
+          Container(
+            height: 40, // Adjust the height as needed
+            child: AppBar(
+              automaticallyImplyLeading: false,
+              backgroundColor: Colors.transparent,
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -62,7 +83,7 @@ class _loginPageState extends State<loginPage> {
               ),
             ],
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -73,9 +94,11 @@ class _loginPageState extends State<loginPage> {
                     children: [
                       const Text('Sign In',
                           style: TextStyle(
-                              fontSize: 50, fontWeight: FontWeight.w500)),
+                              fontSize: 40, fontWeight: FontWeight.w500)),
                       const SizedBox(height: 35),
-                      TextField(
+                      Container(
+                      height: 55,
+                      child: TextField(
                         controller: emailController,
                         textAlign: TextAlign.center,
                         cursorColor: const Color.fromARGB(255, 32, 159, 166),
@@ -104,14 +127,17 @@ class _loginPageState extends State<loginPage> {
                           ),
                         ),
                       ),
+                      ),
                       const SizedBox(height: 20),
-                      TextField(
-                        controller: emailController,
+                      Container(
+                        height: 55,
+                        child: TextField(
+                        controller: passwordController,
                         textAlign: TextAlign.center,
                         cursorColor: const Color.fromARGB(255, 32, 159, 166),
                         decoration: InputDecoration(
                           focusColor: Colors.grey[100],
-                          hintText: 'Your Email',
+                          hintText: 'Password here',
                           hintStyle: GoogleFonts.poppins(),
                           contentPadding: const EdgeInsets.symmetric(
                             vertical: 20.0,
@@ -133,6 +159,7 @@ class _loginPageState extends State<loginPage> {
                             ),
                           ),
                         ),
+                      ),
                       ),
                       const SizedBox(height: 20),
                       SizedBox(
@@ -140,22 +167,30 @@ class _loginPageState extends State<loginPage> {
                         height: 70,
                         child: ElevatedButton(
                           onPressed: () {
-                            // CONTINUE BUTTON
+                            if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+                              Fluttertoast.showToast(msg: 'Please enter both email and password.');
+                              return;
+                            }
+                            signInUser(emailController.text, passwordController.text).then((_) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => basehomeActivity()),
+                              );
+                            }).catchError((error) {
+                              print(error);
+                            });
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF209FA6),
                             shape: const RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20)),
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
                             ),
                           ),
                           child: const Text('Continue',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400)),
+                              style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w400)),
                         ),
                       ),
+
                       const SizedBox(height: 20),
                       Text(
                         'or continue with',
