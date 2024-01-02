@@ -6,13 +6,12 @@ import 'signup_screen.dart';
 import 'feedPage.dart';
 import 'donations_fragment.dart';
 import 'profilePage.dart';
-
+import 'firebase_options.dart';
 
 
 /*
 this is the homepage which contains the bottom nav bar and other stuff
  */
-import 'firebase_options.dart';
 
 import 'firebase_options.dart';
 

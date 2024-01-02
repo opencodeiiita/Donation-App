@@ -105,6 +105,10 @@ class _ImageSliderState extends State<ImageSlider> {
     const Duration duration = Duration(seconds: 3);
 
     Timer.periodic(duration, (Timer timer) {
+      if (!mounted) {
+        return;
+      }
+
       setState(() {
         currentIndex = (currentIndex + 1) % images.length;
         _image = Image.asset("assets/images/${images[currentIndex]}");

@@ -93,10 +93,10 @@ class SignInPage extends StatelessWidget {
             const SizedBox(height: 20.0),
             ElevatedButton(
   onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => basehomeActivity()), // Replace 'OtpPage' with your actual class name
-    );
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => OtpPage()), // Replace 'OtpPage' with your actual class name
+    // );
   },
   style: ElevatedButton.styleFrom(
     minimumSize: const Size(257.0, 55.0),
