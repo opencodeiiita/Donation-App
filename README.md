@@ -31,7 +31,7 @@ We welcome your contributions. Please follow the below guidelines while contribu
 
  🧷**Directly cloning from Android Studio (Alternate method):-**
 
-- Go to FILE ➡️ NEW ➡️ PROJECT FROM VERSION CONTROL
+- Go to FILE ➡️ NEW ➡️ PROJECT FROM VERSION CONTROL.
 - Copy and paste the url of **FORKED repo** in the URL field and click clone.
 
 ## 🧾Common Rules:
