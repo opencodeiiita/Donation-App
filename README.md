@@ -18,6 +18,7 @@
 ## Claim an issue
 Comment on the issue. In case of no activity on the issue even after 2 days, the issue will be reassigned. If you have difficulty approaching the issue, feel free to ask on our discord channel.
 
+
 ## How To Contibute
 
 We welcome your contributions. Please follow the below guidelines while contributing to this project:
