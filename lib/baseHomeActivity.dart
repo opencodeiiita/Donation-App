@@ -1,4 +1,5 @@
 
+import 'package:donation_app/feedPage.dart';
 import 'package:donation_app/main.dart';
 import 'package:donation_app/hamburgerMenu.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +75,18 @@ class _basehomeActivityState extends State<basehomeActivity> with SingleTickerPr
             width: 270,
             left: isSideMenuClosed ? -288 : 0 ,
             height: MediaQuery.of(context).size.height,
-            child: const hamburgerMenu(),
+            child: hamburgerMenu(
+              pressa: (){
+                if (isSideMenuClosed) {
+                  _animationController.forward();
+                } else {
+                  _animationController.reverse();
+                }
+                setState(() {
+                  isSideMenuClosed =!isSideMenuClosed;
+                });
+              },
+            ),
           ),
           Transform.translate(
               offset: Offset(animation.value*270,0),
@@ -82,25 +94,21 @@ class _basehomeActivityState extends State<basehomeActivity> with SingleTickerPr
                 scale: scalAnimation.value,
                 child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(borderanimation.value)),
-                    child: const homePage(
+                    child: feedPage(
+                      press: (){
+                        if (isSideMenuClosed) {
+                          _animationController.forward();
+                        } else {
+                          _animationController.reverse();
+                        }
+                        setState(() {
+                          isSideMenuClosed =!isSideMenuClosed;
+                        });
+                      },
                     ),
                 ),
               )
           ),
-          hamburger_function(
-            press: (){
-              if (isSideMenuClosed) {
-                _animationController.forward();
-              } else {
-                _animationController.reverse();
-              }
-              setState(() {
-                isSideMenuClosed =!isSideMenuClosed;
-              });
-            },
-          ),
-
-
         ],
       ),
 
