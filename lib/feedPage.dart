@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:donation_app/Donation_card.dart';
 import 'package:flutter/material.dart';
 
@@ -10,15 +11,16 @@ this screen is responsible to show the feed it is a part of the screen which are
 const tealLikeColor = Color.fromARGB(255, 32, 159, 166);
 
 class feedPage extends StatefulWidget {
-  const feedPage({super.key});
+  const feedPage({super.key, required this.press});
+
+  final VoidCallback press;
 
   @override
   State<feedPage> createState() => _feedPageState();
 }
 
 class _feedPageState extends State<feedPage> {
-
-
+  final _donationstream= FirebaseFirestore.instance.collection('Donations').snapshots();
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -27,9 +29,46 @@ class _feedPageState extends State<feedPage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-                child: SearchAndMenuWidget(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Ink(
+                      decoration: const ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.horizontal(
+                            left: Radius.circular(20),
+                            right: Radius.circular(20),
+                          ),
+                        ),
+                        color: tealLikeColor,
+                      ),
+                      child: IconButton(
+                          onPressed: widget.press,
+                          icon: const Icon(Icons.menu, color: Colors.white)),
+                    ),
+                    Ink(
+                      decoration: const ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(color: tealLikeColor),
+                          borderRadius: BorderRadius.horizontal(
+                            left: Radius.circular(20),
+                            right: Radius.circular(20),
+                          ),
+                        ),
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.search,
+                          color: tealLikeColor,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               StartFundingButton(),
               const Padding(
@@ -86,64 +125,109 @@ class _feedPageState extends State<feedPage> {
                     ],
                   ),
                 ),
-                ListView.builder(
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  itemCount: 3,
-                  itemBuilder: (context,index){
-                    return const DonationCard();
-                  }
+                StreamBuilder(
+                    stream: _donationstream,
+                    builder: (context,snapshot){
+                      if(snapshot.hasError){
+                        return const Text("connection error...");
+                      }
+                      if(snapshot.connectionState==ConnectionState.waiting){
+                        return const Text("Loading...");
+                      }
+                      var docs =snapshot.data!.docs;
+                      return ListView.builder(
+                          shrinkWrap: true,
+                          physics: const ScrollPhysics(),
+                          itemCount: docs.length,
+                          itemBuilder: (context,index){
+                            return Card(
+                              color: const Color.fromARGB(255, 251, 253, 255),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                side: const BorderSide(color: Colors.blue,),
+                              ),
+                              margin: const EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
+                              child: Padding(
+                                padding:  const EdgeInsets.all(20.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: [
+                                    Container(
+                                      height: 100,
+                                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(25),
+                                        child: const Image(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                            'assets/images/screen1.png',
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          flex: 2,
+                                          child: Text(
+                                            docs[index]['addTitle'],
+                                            softWrap: true,
+                                            style: const TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ),
+                                        Expanded(flex:1,child: SizedBox(),),
+                                      ],
+                                    ),
+                                    Text(
+                                      "By "+docs[index]['addOrganisation'],
+                                      style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.blueGrey
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              '\$'+docs[index]['addRaised'].toString()+' Raised ',
+                                              style: const TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                                color: Color.fromARGB(255, 32, 159, 166),
+                                              ),
+                                            ),
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              'Target-\$'+docs[index]['addTarget'].toString(),
+                                              textAlign: TextAlign.right,
+                                              style: const TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          }
+                      );
+                    }
                 ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class SearchAndMenuWidget extends StatelessWidget {
-  const SearchAndMenuWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Ink(
-          decoration: const ShapeDecoration(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(20),
-                right: Radius.circular(20),
-              ),
-            ),
-            color: tealLikeColor,
-          ),
-          child: IconButton(
-              onPressed: (){},
-              icon: const Icon(Icons.menu, color: Colors.white)),
-        ),
-        Ink(
-          decoration: const ShapeDecoration(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: tealLikeColor),
-              borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(20),
-                right: Radius.circular(20),
-              ),
-            ),
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: tealLikeColor,
-              size: 30,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

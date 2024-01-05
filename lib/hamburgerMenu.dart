@@ -1,4 +1,6 @@
 
+import 'package:donation_app/donations_fragment.dart';
+import 'package:donation_app/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'loginPage.dart';
@@ -10,15 +12,10 @@ const whiteg =Color.fromARGB(255,222,240,241);
 /*
 this screen cotains all the buttons and code responsible for hte hamburrger menu
  */
-class hamburgerMenu extends StatefulWidget {
-  const hamburgerMenu({super.key});
+class hamburgerMenu extends StatelessWidget {
+  const hamburgerMenu({super.key, required this.pressa});
+  final VoidCallback pressa;
 
-  @override
-  State<hamburgerMenu> createState() => _hamburgerMenuState();
-}
-
-class _hamburgerMenuState extends State<hamburgerMenu> {
-  static const IconData logout_rounded = IconData(0xf88b, fontFamily: 'MaterialIcons');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +27,17 @@ class _hamburgerMenuState extends State<hamburgerMenu> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              TextButton(
+                  onPressed:pressa ,
+                  child: const Text(
+                    'back',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  )
+              ),
               const Padding(
-                padding: EdgeInsets.fromLTRB(15, 100, 0, 0),
+                padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
                 child: CircleAvatar(
                   radius: 45,
                   backgroundColor: Colors.white24,
@@ -48,7 +54,7 @@ class _hamburgerMenuState extends State<hamburgerMenu> {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.fromLTRB(15,0,0,40),
+                padding: EdgeInsets.fromLTRB(15,0,0,20),
                 child: Text('hellobesnik@gmail.com',
                   style: TextStyle(
                       fontSize: 15,
@@ -67,7 +73,12 @@ class _hamburgerMenuState extends State<hamburgerMenu> {
                 ),
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                  );
+                },
                 child: const Text(
                   'Profile',
                   style: TextStyle(
@@ -97,9 +108,14 @@ class _hamburgerMenuState extends State<hamburgerMenu> {
                 ),
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DonationsFragment()),
+                  );
+                },
                 child: const Text(
-                  'Payment',
+                  'Donations',
                   style: TextStyle(
                     fontSize: 16,
                     color: whiteg,
@@ -135,7 +151,7 @@ class _hamburgerMenuState extends State<hamburgerMenu> {
                           padding: EdgeInsets.fromLTRB(0,0,10,0),
                           child: Text('LogOut',style: TextStyle(color: Color.fromARGB(255,222,240,241),fontSize: 16),),
                         ),
-                        Icon(logout_rounded,color: whiteg,),
+                        Icon(IconData(0xf88b, fontFamily: 'MaterialIcons'),color: whiteg,),
                       ],
                     )
                 ),
