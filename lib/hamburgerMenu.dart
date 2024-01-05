@@ -115,7 +115,7 @@ class hamburgerMenu extends StatelessWidget {
                   );
                 },
                 child: const Text(
-                  'Payment',
+                  'Donations',
                   style: TextStyle(
                     fontSize: 16,
                     color: whiteg,

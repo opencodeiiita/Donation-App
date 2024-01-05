@@ -182,7 +182,7 @@ class _feedPageState extends State<feedPage> {
                                       ],
                                     ),
                                     Text(
-                                      docs[index]['addOrganisation'],
+                                      "By "+docs[index]['addOrganisation'],
                                       style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w400,
