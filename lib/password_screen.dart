@@ -1,4 +1,5 @@
-import 'package:donation_app/baseHomeActivity.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:donation_app/profile_setup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -15,7 +16,8 @@ class PasswordScreen extends StatefulWidget {
 
 class _PasswordScreenState extends State<PasswordScreen> {
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   bool _obscureText = true;
 
@@ -24,7 +26,6 @@ class _PasswordScreenState extends State<PasswordScreen> {
       _obscureText = !_obscureText;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -105,8 +106,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                             ? Icons.visibility
                             : Icons.visibility_off),
                         onPressed: _toggle,
-                      )
-                  ),
+                      )),
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
                 ),
@@ -146,8 +146,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                             ? Icons.visibility
                             : Icons.visibility_off),
                         onPressed: _toggle,
-                      )
-                  ),
+                      )),
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
                 ),
@@ -157,11 +156,13 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   height: 70,
                   child: ElevatedButton(
                     onPressed: () async {
-                      if (await createAccount()) {
+                      String? uid = await createAccount();
+                      if (uid != null) {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const basehomeActivity()),
+                            builder: (context) => ProfileSetup(uid),
+                          ),
                         );
                       }
                     },
@@ -186,22 +187,20 @@ class _PasswordScreenState extends State<PasswordScreen> {
     );
   }
 
-  Future<bool> createAccount() async {
+  Future<String?> createAccount() async {
     try {
-      final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: widget.email,
         password: passwordController.text,
       );
-      Fluttertoast.showToast(
-        msg: 'Logged in as ${widget.email}.',
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: const Color(0xFF209FA6),
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
-      return true;
+      FirebaseFirestore db = FirebaseFirestore.instance;
+      await db.collection('users').doc(credential.user!.uid).set({
+        'email': credential.user!.email,
+        'displayName': '',
+        'photoURL': '',
+      });
+      return credential.user!.uid;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Fluttertoast.showToast(
@@ -213,6 +212,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
           textColor: Colors.white,
           fontSize: 16.0,
         );
+        return null;
       } else if (e.code == 'email-already-in-use') {
         Fluttertoast.showToast(
           msg: 'The account already exists for that email.',
@@ -223,8 +223,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
           textColor: Colors.white,
           fontSize: 16.0,
         );
+        return null;
       }
-      return false;
     } catch (e) {
       Fluttertoast.showToast(
         msg: e.toString(),
@@ -235,7 +235,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
         textColor: Colors.white,
         fontSize: 16.0,
       );
-      return false;
+      return null;
     }
   }
 }
