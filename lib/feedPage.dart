@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:donation_app/Donation_card.dart';
 import 'package:flutter/material.dart';
 
-
-
 /*
 this screen is responsible to show the feed it is a part of the screen which are displayed by the bottomnavbar
  */
@@ -20,141 +18,149 @@ class feedPage extends StatefulWidget {
 }
 
 class _feedPageState extends State<feedPage> {
-  final _donationstream= FirebaseFirestore.instance.collection('Donations').snapshots();
+  final _donationstream =
+      FirebaseFirestore.instance.collection('Donations').snapshots();
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Ink(
-                      decoration: const ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.horizontal(
-                            left: Radius.circular(20),
-                            right: Radius.circular(20),
-                          ),
-                        ),
-                        color: tealLikeColor,
-                      ),
-                      child: IconButton(
-                          onPressed: widget.press,
-                          icon: const Icon(Icons.menu, color: Colors.white)),
-                    ),
-                    Ink(
-                      decoration: const ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(color: tealLikeColor),
-                          borderRadius: BorderRadius.horizontal(
-                            left: Radius.circular(20),
-                            right: Radius.circular(20),
-                          ),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Ink(
+                    decoration: const ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(20),
+                          right: Radius.circular(20),
                         ),
                       ),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.search,
-                          color: tealLikeColor,
-                          size: 30,
-                        ),
-                      ),
+                      color: tealLikeColor,
                     ),
-                  ],
-                ),
-              ),
-              StartFundingButton(),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    CategoryButton(
-                      icon: Icons.apps,
-                      label: 'All',
-                      color: Colors.blue,
-                    ),
-                    CategoryButton(
-                      icon: Icons.local_hospital,
-                      label: 'Medical',
-                      color: Colors.teal,
-                    ),
-                    CategoryButton(
-                      icon: Icons.school,
-                      label: 'Education',
-                      color: Colors.orange,
-                    ),
-                    CategoryButton(
-                      icon: Icons.masks,
-                      label: 'Pandemic',
-                      color: Colors.red,
-                    ),
-                  ],
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Popular',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 26,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text("See All",
-                        style: TextStyle(
-                          color: tealLikeColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        )
-                      )
-                    ],
+                    child: IconButton(
+                        onPressed: widget.press,
+                        icon: const Icon(Icons.menu, color: Colors.white)),
                   ),
-                ),
-                StreamBuilder(
-                    stream: _donationstream,
-                    builder: (context,snapshot){
-                      if(snapshot.hasError){
-                        return const Text("connection error...");
-                      }
-                      if(snapshot.connectionState==ConnectionState.waiting){
-                        return const Text("Loading...");
-                      }
-                      var docs =snapshot.data!.docs;
-                      return ListView.builder(
+                  Ink(
+                    decoration: const ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(color: tealLikeColor),
+                        borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(20),
+                          right: Radius.circular(20),
+                        ),
+                      ),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.search,
+                        color: tealLikeColor,
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    StartFundingButton(),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          CategoryButton(
+                            icon: Icons.apps,
+                            label: 'All',
+                            color: Colors.blue,
+                          ),
+                          CategoryButton(
+                            icon: Icons.local_hospital,
+                            label: 'Medical',
+                            color: Colors.teal,
+                          ),
+                          CategoryButton(
+                            icon: Icons.school,
+                            label: 'Education',
+                            color: Colors.orange,
+                          ),
+                          CategoryButton(
+                            icon: Icons.masks,
+                            label: 'Pandemic',
+                            color: Colors.red,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20, right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Popular',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            "See All",
+                            style: TextStyle(
+                              color: tealLikeColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    StreamBuilder(
+                      stream: _donationstream,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasError) {
+                          return const Text("connection error...");
+                        }
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return const Text("Loading...");
+                        }
+                        var docs = snapshot.data!.docs;
+                        return ListView.builder(
                           shrinkWrap: true,
-                          physics: const ScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: docs.length,
-                          itemBuilder: (context,index){
+                          itemBuilder: (context, index) {
                             return Card(
                               color: const Color.fromARGB(255, 251, 253, 255),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30),
-                                side: const BorderSide(color: Colors.blue,),
+                                side: const BorderSide(color: Colors.blue),
                               ),
-                              margin: const EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
+                              margin:
+                                  const EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
                               child: Padding(
-                                padding:  const EdgeInsets.all(20.0),
+                                padding: const EdgeInsets.all(20.0),
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
                                   children: [
                                     Container(
                                       height: 100,
-                                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 10),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(25),
                                         child: const Image(
@@ -178,16 +184,15 @@ class _feedPageState extends State<feedPage> {
                                             ),
                                           ),
                                         ),
-                                        Expanded(flex:1,child: SizedBox(),),
+                                        Expanded(flex: 1, child: SizedBox()),
                                       ],
                                     ),
                                     Text(
-                                      "By "+docs[index]['addOrganisation'],
+                                      "By " + docs[index]['addOrganisation'],
                                       style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w400,
-                                          color: Colors.blueGrey
-                                      ),
+                                          color: Colors.blueGrey),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
@@ -195,17 +200,23 @@ class _feedPageState extends State<feedPage> {
                                         children: [
                                           Expanded(
                                             child: Text(
-                                              '\$'+docs[index]['addRaised'].toString()+' Raised ',
+                                              '\$' +
+                                                  docs[index]['addRaised']
+                                                      .toString() +
+                                                  ' Raised ',
                                               style: const TextStyle(
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
-                                                color: Color.fromARGB(255, 32, 159, 166),
+                                                color: Color.fromARGB(
+                                                    255, 32, 159, 166),
                                               ),
                                             ),
                                           ),
                                           Expanded(
                                             child: Text(
-                                              'Target-\$'+docs[index]['addTarget'].toString(),
+                                              'Target-\$' +
+                                                  docs[index]['addTarget']
+                                                      .toString(),
                                               textAlign: TextAlign.right,
                                               style: const TextStyle(
                                                 fontSize: 16,
@@ -220,12 +231,15 @@ class _feedPageState extends State<feedPage> {
                                 ),
                               ),
                             );
-                          }
-                      );
-                    }
+                          },
+                        );
+                      },
+                    ),
+                  ],
                 ),
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );

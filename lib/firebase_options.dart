@@ -14,7 +14,6 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
-/// 
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -24,24 +23,21 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-              'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
-              'you can reconfigure this by running the FlutterFire CLI again.',
+          'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
-              'you can reconfigure this by running the FlutterFire CLI again.',
+          'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
-              'you can reconfigure this by running the FlutterFire CLI again.',
+          'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
         throw UnsupportedError(
@@ -66,5 +62,15 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1085876463007',
     projectId: 'donation-app-a7e3f',
     storageBucket: 'donation-app-a7e3f.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBnH6nQrjfBvIQ7lXVgY7CyQ89OwAqsFq4',
+    appId: '1:1085876463007:ios:9689334a1740f8dd2749aa',
+    messagingSenderId: '1085876463007',
+    projectId: 'donation-app-a7e3f',
+    storageBucket: 'donation-app-a7e3f.appspot.com',
+    androidClientId: '1085876463007-1pmpvjhq66rhtil995u3mokdllfv1gi7.apps.googleusercontent.com',
+    iosBundleId: 'com.example.donationApp',
   );
 }
