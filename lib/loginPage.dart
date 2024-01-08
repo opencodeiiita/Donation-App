@@ -4,7 +4,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'baseHomeActivity.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 /*
 this is the screen responsible for handling of the login actvity
 
@@ -30,6 +32,27 @@ Future<void> signInUser(String email, String password) async {
     } else if (e.code == 'invalid-credential') {
       Fluttertoast.showToast(msg: 'Invalid Credentials');
     }
+    Fluttertoast.showToast(msg: "ERROR! Please try after some time");
+    throw e;
+  }
+}
+
+Future<void> signInUserGoogle() async {
+  try {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+    final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+    await FirebaseAuth.instance.signInWithCredential(credential);
+    final User? user = FirebaseAuth.instance.currentUser;
+    FirebaseFirestore db = FirebaseFirestore.instance;
+    await db.collection("users").doc(user?.uid).set({
+      "email": user?.email,
+      "displayName": user?.displayName,
+      "photoURL": user?.photoURL,
+    });
+  } on FirebaseAuthException catch (e) {
     Fluttertoast.showToast(msg: "ERROR! Please try after some time");
     throw e;
   }
@@ -223,7 +246,15 @@ class _loginPageState extends State<loginPage> {
                           backgroundColor: Colors.white,
                           borderRadius: 20,
                           onPressed: () {
-                            // GOOGLE BUTTON.
+                            signInUserGoogle().then((_) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => basehomeActivity()),
+                              );
+                            }).catchError((error) {
+                              print(error);
+                            });
                           }),
                       const SizedBox(height: 20),
                       Row(

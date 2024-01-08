@@ -71,6 +71,7 @@ class DefaultFirebaseOptions {
     projectId: 'donation-app-a7e3f',
     storageBucket: 'donation-app-a7e3f.appspot.com',
     androidClientId: '1085876463007-1pmpvjhq66rhtil995u3mokdllfv1gi7.apps.googleusercontent.com',
+    iosClientId: '1085876463007-hbjvbpkg1g7cgvcm4devdro17ir9tfhh.apps.googleusercontent.com',
     iosBundleId: 'com.example.donationApp',
   );
 }

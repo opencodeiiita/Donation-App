@@ -1,103 +1,110 @@
 {
-  "project_info": {
-    "project_number": "1085876463007",
-    "project_id": "donation-app-a7e3f",
-    "storage_bucket": "donation-app-a7e3f.appspot.com"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1085876463007:android:b9079197295f94d42749aa",
-        "android_client_info": {
-          "package_name": "com.example.donation_app"
-        }
-      },
-      "oauth_client": [
+    "project_info": {
+        "project_number": "1085876463007",
+        "project_id": "donation-app-a7e3f",
+        "storage_bucket": "donation-app-a7e3f.appspot.com"
+    },
+    "client": [
         {
-          "client_id": "1085876463007-1pmpvjhq66rhtil995u3mokdllfv1gi7.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "0381434fb6d4427377b846f0f16c98be578d2464"
-          }
-        },
-        {
-          "client_id": "1085876463007-7sjl1t16hhv8enolfjgv1sof5lh1k2ra.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "0e472c5f1ece87b156a435c640e399154524c719"
-          }
-        },
-        {
-          "client_id": "1085876463007-a0q3m5vrpprhlheiv8an4unc800hkd9g.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "a0fb0288c6b86d6b9d029ee07bb978edace16dfd"
-          }
-        },
-        {
-          "client_id": "1085876463007-e90l9sirhock4s57cj4o95ss784v5ogj.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "e6457282e79f3d4a2f1e9fc138b7e348c8f1172d"
-          }
-        },
-        {
-          "client_id": "1085876463007-fsovhrelfk0hqlbkp58ao17945jlcskm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "7bb00266d92d20ddff32c4626b6afd798f747438"
-          }
-        },
-        {
-          "client_id": "1085876463007-uj15l7ub5n3mlaecl3h3moc7pdjdbrr6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "fdeb92824aebacd19caf8264a29c7ef4e5f5958d"
-          }
-        },
-        {
-          "client_id": "1085876463007-v0bglucvd9t5p9ajmuj4fk098c00mlti.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "c46d6c2e204bf01e5c0ed80da5938031f2ea29fa"
-          }
-        },
-        {
-          "client_id": "1085876463007-va12fjbf5alg2kgkig7567dpqkeedkg6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.donation_app",
-            "certificate_hash": "3eebfd544d1c8d2d553a9953ca3de7f99be6198d"
-          }
-        },
-        {
-          "client_id": "1085876463007-8js7d88odhu9glu6utjf61rto43unpoa.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDd-FO3ln8hdByls1opp3U1FlbuwS9aNpI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1085876463007-8js7d88odhu9glu6utjf61rto43unpoa.apps.googleusercontent.com",
-              "client_type": 3
+            "client_info": {
+                "mobilesdk_app_id": "1:1085876463007:android:b9079197295f94d42749aa",
+                "android_client_info": {
+                    "package_name": "com.example.donation_app"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1085876463007-1pmpvjhq66rhtil995u3mokdllfv1gi7.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "0381434fb6d4427377b846f0f16c98be578d2464"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-7sjl1t16hhv8enolfjgv1sof5lh1k2ra.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "0e472c5f1ece87b156a435c640e399154524c719"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-a0q3m5vrpprhlheiv8an4unc800hkd9g.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "a0fb0288c6b86d6b9d029ee07bb978edace16dfd"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-e90l9sirhock4s57cj4o95ss784v5ogj.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "e6457282e79f3d4a2f1e9fc138b7e348c8f1172d"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-fsovhrelfk0hqlbkp58ao17945jlcskm.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "7bb00266d92d20ddff32c4626b6afd798f747438"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-uj15l7ub5n3mlaecl3h3moc7pdjdbrr6.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "fdeb92824aebacd19caf8264a29c7ef4e5f5958d"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-v0bglucvd9t5p9ajmuj4fk098c00mlti.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "c46d6c2e204bf01e5c0ed80da5938031f2ea29fa"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-va12fjbf5alg2kgkig7567dpqkeedkg6.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.example.donation_app",
+                        "certificate_hash": "3eebfd544d1c8d2d553a9953ca3de7f99be6198d"
+                    }
+                },
+                {
+                    "client_id": "1085876463007-8js7d88odhu9glu6utjf61rto43unpoa.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyDd-FO3ln8hdByls1opp3U1FlbuwS9aNpI"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1085876463007-8js7d88odhu9glu6utjf61rto43unpoa.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1085876463007-hbjvbpkg1g7cgvcm4devdro17ir9tfhh.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.example.donationApp"
+                            }
+                        }
+                    ]
+                }
             }
-          ]
         }
-      }
-    }
-  ],
-  "configuration_version": "1"
+    ],
+    "configuration_version": "1"
 }
