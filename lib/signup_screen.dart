@@ -1,8 +1,13 @@
+import 'package:donation_app/baseHomeActivity.dart';
 import 'package:donation_app/loginPage.dart';
 import 'package:donation_app/password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -13,6 +18,28 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController emailController = TextEditingController();
+
+  Future<void> signUpUserGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+      final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+      await FirebaseAuth.instance.signInWithCredential(credential);
+
+      final User? user = FirebaseAuth.instance.currentUser;
+      FirebaseFirestore db = FirebaseFirestore.instance;
+      await db.collection("users").doc(user?.uid).set({
+        "email": user?.email,
+        "displayName": user?.displayName,
+        "photoURL": user?.photoURL,
+      });
+    } on FirebaseAuthException catch (e) {
+      Fluttertoast.showToast(msg: "ERROR! Please try after some time");
+      throw e;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +122,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) =>  PasswordScreen(emailController.text)),
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PasswordScreen(emailController.text)),
                             );
                           },
                           style: ElevatedButton.styleFrom(
@@ -134,7 +163,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           backgroundColor: Colors.white,
                           borderRadius: 20,
                           onPressed: () {
-                            // GOOGLE BUTTON.
+                            signUpUserGoogle().then((_) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => basehomeActivity()),
+                              );
+                            }).catchError((error) {
+                              print(error);
+                            });
                           }),
                       const SizedBox(height: 20),
                       Row(
