@@ -1,8 +1,15 @@
 
+import 'package:donation_app/create_fund_page.dart';
 import 'package:donation_app/donations_fragment.dart';
-import 'package:donation_app/profile_screen.dart';
+import 'package:donation_app/help_faq_page.dart';
+import 'package:donation_app/historypage.dart';
+import 'package:donation_app/profilePage.dart';
+import 'package:donation_app/settingspage.dart';
+import 'package:donation_app/signIn.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'loginPage.dart';
 
 const tealLikeColor = Color.fromARGB(255, 32, 159, 166);
@@ -15,6 +22,7 @@ this screen cotains all the buttons and code responsible for hte hamburrger menu
 class hamburgerMenu extends StatelessWidget {
   const hamburgerMenu({super.key, required this.pressa});
   final VoidCallback pressa;
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +71,14 @@ class hamburgerMenu extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CreateFundPage(),
+                    ),
+                  );
+                },
                 child: const Text(
                   'Create Fund',
                   style: TextStyle(
@@ -76,7 +91,7 @@ class hamburgerMenu extends StatelessWidget {
                 onPressed: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                    MaterialPageRoute(builder: (context) => const profilePage()),
                   );
                 },
                 child: const Text(
@@ -88,7 +103,12 @@ class hamburgerMenu extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SettingsPage()),
+                  );
+                },
                 child: const Text(
                   'Settings',
                   style: TextStyle(
@@ -98,7 +118,12 @@ class hamburgerMenu extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HistoryPage()),
+                  );
+                },
                 child: const Text(
                   'History',
                   style: TextStyle(
@@ -123,7 +148,12 @@ class hamburgerMenu extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HelpPage()),
+                  );
+                },
                 child: const Text(
                   'Help & FAQ',
                   style: TextStyle(
@@ -139,11 +169,13 @@ class hamburgerMenu extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(5, 0, 0, 30),
                 child: TextButton(
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const loginPage()),
-                      );
+                    onPressed: ()async {
+                      final navigator = Navigator.of(context);
+                      await FirebaseAuth.instance.signOut();
+                      await GoogleSignIn().signOut();
+
+                      navigator.pushAndRemoveUntil(MaterialPageRoute(
+                          builder: (c) => const loginPage()),(route)=>false);
                     },
                     child: const Row(
                       children: [

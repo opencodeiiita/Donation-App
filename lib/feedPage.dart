@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:donation_app/Donation_card.dart';
+import 'package:donation_app/create_fund_page.dart';
 import 'package:flutter/material.dart';
 
 /*
@@ -163,10 +164,10 @@ class _feedPageState extends State<feedPage> {
                                           0, 0, 0, 10),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(25),
-                                        child: const Image(
+                                        child: Image(
                                           fit: BoxFit.cover,
-                                          image: AssetImage(
-                                            'assets/images/screen1.png',
+                                          image: NetworkImage(
+                                            docs[index]['addImage'],
                                           ),
                                         ),
                                       ),
@@ -295,7 +296,14 @@ class StartFundingButton extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(top: 20, bottom: 15),
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CreateFundPage(),
+                ),
+              );
+            },
             style: TextButton.styleFrom(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 13),
               shape: RoundedRectangleBorder(

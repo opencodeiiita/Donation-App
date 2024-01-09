@@ -20,7 +20,7 @@ class introPage3 extends StatelessWidget {
                 'Everyone Can Help Someone',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 36,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF1B2440),
                   decoration: TextDecoration.none,
