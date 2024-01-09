@@ -78,7 +78,7 @@ class PageScreen extends StatelessWidget {
                   titl1,
                   style: GoogleFonts.poppins(
                       textStyle: const TextStyle(
-                    fontSize: 45,
+                    fontSize: 30,
                     color: Color.fromARGB(255, 26, 36, 65),
                     fontWeight: FontWeight.w500,
                   )),
@@ -88,7 +88,7 @@ class PageScreen extends StatelessWidget {
                   titl2,
                   style: GoogleFonts.poppins(
                       textStyle: const TextStyle(
-                    fontSize: 45,
+                    fontSize: 30,
                     color: Color.fromARGB(255, 26, 36, 65),
                     fontWeight: FontWeight.w500,
                   )),

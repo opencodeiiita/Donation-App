@@ -2,7 +2,9 @@
 import 'package:donation_app/feedPage.dart';
 import 'package:donation_app/main.dart';
 import 'package:donation_app/hamburgerMenu.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:rive/rive.dart';
 import 'hamburger_function.dart';
 
@@ -20,6 +22,8 @@ class basehomeActivity extends StatefulWidget {
 
 class _basehomeActivityState extends State<basehomeActivity> with SingleTickerProviderStateMixin
 {
+
+
 
   late SMIBool isSideBarClosed;
   bool isSideMenuClosed=true;
