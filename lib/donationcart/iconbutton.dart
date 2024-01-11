@@ -5,7 +5,8 @@ import 'list_cart_item.dart';
 import '../feedPage.dart';
 
 class IconB extends StatelessWidget {
-  const IconB({super.key, required this.name, required this.ic});
+  const IconB({super.key, required this.name, required this.ic, required this.press});
+  final VoidCallback press;
   final String name;
   final IconData ic;
   @override
@@ -23,10 +24,7 @@ class IconB extends StatelessWidget {
             color: tealLikeColor,
           ),
           child: IconButton(
-              onPressed: (){
-                cart.add(CartItem(itemname: name));
-                Navigator.pop;
-              },
+              onPressed: press,
               icon: Icon(ic, color: Colors.white)),
         ),
         Text(name,style: TextStyle(fontSize: 8),),

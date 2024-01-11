@@ -9,7 +9,7 @@ class CartItem extends StatefulWidget {
 }
 
 class _CartItemState extends State<CartItem> {
-  int count=0;
+  int count=1;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,9 @@ class _CartItemState extends State<CartItem> {
             child: Container(
               child: Row(
                 children: [
-                  IconButton(onPressed: (){}, icon: const Icon(Icons.close)),
+                  IconButton(
+                    onPressed: (){},
+                    icon: const Icon(Icons.close)),
                   Text(
                     widget.itemname,
                     style: TextStyle(
