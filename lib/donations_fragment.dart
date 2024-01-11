@@ -18,14 +18,21 @@ class DonationsFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Donations", style: TextStyle(color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.w600),),
-        leading: BackButton(),
-        actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.share),)
-        ],
-        backgroundColor: Colors.white,
-      ),
+      appBar:AppBar(
+            title: const Text(
+              "Donations",
+              style: TextStyle(
+                color: Colors.black, // Adjust color to match theme
+                fontSize: 25.0,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            leading: const BackButton(),
+            actions: [
+              IconButton(onPressed: (){}, icon: const Icon(Icons.share),)
+            ],
+            backgroundColor: Colors.white, // Adjust background color to match other screens
+          ),
       body: SafeArea(
         minimum: const EdgeInsets.fromLTRB(25, 0, 25, 25),
         child: Column(
@@ -66,7 +73,7 @@ class DonationsFragment extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Expanded(
                         child: Container(
                           height: 270,
@@ -145,7 +152,7 @@ class DonationsFragment extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 30),
-                  Row(
+                  Column(
                     children: [
                       Row(
                         children: [
@@ -359,10 +366,8 @@ class _VideoPlayerState extends State<VideoPlayerScreen> {
                         });
                       },
                       icon: Icon(
-                        _controller.value.isPlaying
-                            ? Icons.pause
-                            : Icons.play_arrow,
-                        color: const Color(0xff209fa6),
+                        _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                        color: const Color(0xff209fa6), // Adjust icon color to match theme
                       ),
                     ),
                   ),
