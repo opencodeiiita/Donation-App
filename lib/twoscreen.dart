@@ -21,29 +21,29 @@ class _TwoScreenState extends State<TwoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView(
-      controller: _pageController,
-      children: [
-        PageScreen(
-            image: 'assets/images/screen1.png',
-            titl1: "Let's Help",
-            titl2: "Each Others",
-            next: () {
-              _pageController.animateToPage(
-                1,
-                duration: const Duration(
-                    milliseconds:
-                        1000), // You can adjust the duration as needed
-                curve: Curves.ease,
-              );
-            }),
-        const PageScreen(
-            image: 'assets/images/screen2.png',
-            titl1: "We Can Help",
-            titl2: 'Poor People',
-            next: null)
-      ],
-    ));
+      body: PageView(
+        controller: _pageController,
+        physics: const BouncingScrollPhysics(), 
+        children: [
+          PageScreen(
+              image: 'assets/images/screen1.png',
+              titl1: "Let's Help",
+              titl2: "Each Others",
+              next: () {
+                _pageController.animateToPage(
+                  1,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              }),
+          const PageScreen(
+              image: 'assets/images/screen2.png',
+              titl1: "We Can Help",
+              titl2: 'Poor People',
+              next: null)
+        ],
+      ),
+    );
   }
 }
 
