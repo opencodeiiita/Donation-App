@@ -24,7 +24,7 @@ class DonationDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {Navigator.pop(context);},
                   child: const Text(
                     'Back',
                     style: TextStyle(color: Color(0xff1A2441), fontSize: 14.0),
@@ -48,37 +48,40 @@ class DonationDetails extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 270,
-                        width: 180,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: const NetworkImage(
-                                  'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg'),
-                              fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(
-                                  Colors.black.withOpacity(0.5),
-                                  BlendMode.darken),
+                      Expanded(
+                        child: Container(
+                          height: 270,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: const NetworkImage(
+                                    'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg'),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(
+                                    Colors.black.withOpacity(0.5),
+                                    BlendMode.darken),
+                              ),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: const Center(
+                            child: Text(
+                              "10+ \nImage",
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const Center(
-                          child: Text(
-                            "10+ \nImage",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-                      Container(
-                        height: 270,
-                        width: 180,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const VideoPlayerWidget(),
+                      const SizedBox(width: 20,),
+                      Expanded(
+                        child: Container(
+                          height: 270,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30)),
+                          child: const VideoPlayerWidget(),
+                        ),
                       ),
                     ],
                   ),
@@ -112,9 +115,6 @@ class DonationDetails extends StatelessWidget {
                             )
                           ],
                         ),
-                      ),
-                      const SizedBox(
-                        width: 50,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,

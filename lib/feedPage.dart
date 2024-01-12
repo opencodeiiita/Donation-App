@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:donation_app/DonationDetails.dart';
 import 'package:donation_app/Donation_card.dart';
 import 'package:donation_app/create_fund_page.dart';
 import 'package:flutter/material.dart';
@@ -144,91 +145,101 @@ class _feedPageState extends State<feedPage> {
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: docs.length,
                           itemBuilder: (context, index) {
-                            return Card(
-                              color: const Color.fromARGB(255, 251, 253, 255),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                side: const BorderSide(color: Colors.blue),
-                              ),
-                              margin:
-                                  const EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
-                              child: Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    Container(
-                                      height: 100,
-                                      padding: const EdgeInsets.fromLTRB(
-                                          0, 0, 0, 10),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(25),
-                                        child: Image(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage(
-                                            docs[index]['addImage'],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          flex: 2,
-                                          child: Text(
-                                            docs[index]['addTitle'],
-                                            softWrap: true,
-                                            style: const TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w500,
+                            return GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const DonationDetails(),
+                                  ),
+                                );
+                              },
+                              child: Card(
+                                color: const Color.fromARGB(255, 251, 253, 255),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                  side: const BorderSide(color: Colors.blue),
+                                ),
+                                margin:
+                                    const EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    children: [
+                                      Container(
+                                        height: 100,
+                                        padding: const EdgeInsets.fromLTRB(
+                                            0, 0, 0, 10),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(25),
+                                          child: Image(
+                                            fit: BoxFit.cover,
+                                            image: NetworkImage(
+                                              docs[index]['addImage'],
                                             ),
                                           ),
                                         ),
-                                        Expanded(flex: 1, child: SizedBox()),
-                                      ],
-                                    ),
-                                    Text(
-                                      "By " + docs[index]['addOrganisation'],
-                                      style: const TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.blueGrey),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                                      child: Row(
+                                      ),
+                                      Row(
                                         children: [
                                           Expanded(
+                                            flex: 2,
                                             child: Text(
-                                              '\$' +
-                                                  docs[index]['addRaised']
-                                                      .toString() +
-                                                  ' Raised ',
+                                              docs[index]['addTitle'],
+                                              softWrap: true,
                                               style: const TextStyle(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500,
-                                                color: Color.fromARGB(
-                                                    255, 32, 159, 166),
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Text(
-                                              'Target-\$' +
-                                                  docs[index]['addTarget']
-                                                      .toString(),
-                                              textAlign: TextAlign.right,
-                                              style: const TextStyle(
-                                                fontSize: 16,
+                                                fontSize: 20,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                             ),
                                           ),
+                                          Expanded(flex: 1, child: SizedBox()),
                                         ],
                                       ),
-                                    ),
-                                  ],
+                                      Text(
+                                        "By " + docs[index]['addOrganisation'],
+                                        style: const TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.blueGrey),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Text(
+                                                '\$' +
+                                                    docs[index]['addRaised']
+                                                        .toString() +
+                                                    ' Raised ',
+                                                style: const TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Color.fromARGB(
+                                                      255, 32, 159, 166),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Text(
+                                                'Target-\$' +
+                                                    docs[index]['addTarget']
+                                                        .toString(),
+                                                textAlign: TextAlign.right,
+                                                style: const TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             );

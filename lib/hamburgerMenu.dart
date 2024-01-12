@@ -1,5 +1,6 @@
 
 import 'package:donation_app/create_fund_page.dart';
+import 'package:donation_app/donationcart/mydonationbox.dart';
 import 'package:donation_app/donations_fragment.dart';
 import 'package:donation_app/help_faq_page.dart';
 import 'package:donation_app/historypage.dart';
@@ -136,11 +137,11 @@ class hamburgerMenu extends StatelessWidget {
                 onPressed: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DonationsFragment()),
+                    MaterialPageRoute(builder: (context) => MyDonationBox()),
                   );
                 },
                 child: const Text(
-                  'Donations',
+                  'Donate',
                   style: TextStyle(
                     fontSize: 16,
                     color: whiteg,
