@@ -3,6 +3,12 @@
 ## 🚀What issue does Donation App address?
 **Our app establishes a two-way connection between NGOs and donors. NGOs can directly communicate with donors, and vice versa. Essentially, it serves as a centralized hub for managing donations and specifying the organizations that will benefit from the contributions.**</p>
 
+## 🏆Our Top Contributors
+
+<a href="https://github.com/opencodeiiita/Donation-App/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=opencodeiiita/Donation-App"/>
+</a>
+
 ## 🧷Getting Started
 - [Setup Git](https://git-scm.com/downloads)
 - [Setting up Android Studio](https://developer.android.com/studio/install)
@@ -63,13 +69,3 @@ Whether you are working on a new feature or facing a doubt please feel free to a
 - [Set up flutter and Android Studio](https://flutter.dev/docs/get-started/install)
 - [Or setting up VS code for flutter](https://flutter.dev/docs/development/tools/vs-code)
 - [Firebase official Documentation](https://firebase.google.com/docs)
-
-## 🏆Our Top Contributors
-
-<a href="https://github.com/opencodeiiita/Donation-App/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=opencodeiiita/Donation-App"/>
-</a>
-
-
-
-
