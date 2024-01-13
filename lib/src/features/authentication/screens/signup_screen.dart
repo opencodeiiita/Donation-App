@@ -1,6 +1,6 @@
-import 'package:donation_app/baseHomeActivity.dart';
-import 'package:donation_app/loginPage.dart';
-import 'package:donation_app/password_screen.dart';
+import 'package:donation_app/src/features/home/baseHomeActivity.dart';
+import 'package:donation_app/src/features/authentication/screens/loginPage.dart';
+import 'package:donation_app/src/features/authentication/screens/password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';

@@ -1,5 +1,5 @@
-import 'package:donation_app/achievements_screen.dart';
-import 'package:donation_app/profile_screen.dart';
+import 'package:donation_app/src/features/profile/achievements_screen.dart';
+import 'package:donation_app/src/features/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class profilePage extends StatefulWidget {

@@ -1,8 +1,8 @@
-import 'package:donation_app/donationcart/item_card.dart';
+import 'package:donation_app/src/features/donationcart/item_card.dart';
 import 'package:flutter/material.dart';
 import 'list_cart_item.dart';
 
-import '../feedPage.dart';
+import '../home/feedPage.dart';
 
 class IconB extends StatelessWidget {
   const IconB({super.key, required this.name, required this.ic, required this.press});
