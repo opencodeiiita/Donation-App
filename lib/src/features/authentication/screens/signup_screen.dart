@@ -85,35 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           style: TextStyle(
                               fontSize: 50, fontWeight: FontWeight.w500)),
                       const SizedBox(height: 35),
-                      TextField(
-                        controller: emailController,
-                        textAlign: TextAlign.center,
-                        cursorColor: const Color.fromARGB(255, 32, 159, 166),
-                        decoration: InputDecoration(
-                          focusColor: Colors.grey[100],
-                          hintText: 'Your Email',
-                          hintStyle: GoogleFonts.poppins(),
-                          contentPadding: const EdgeInsets.symmetric(
-                            vertical: 20.0,
-                            horizontal: 20.0,
-                          ),
-                          border: const OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                              borderSide: BorderSide(
-                                width: 0.2,
-                              )),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color.fromARGB(255, 32, 159, 166),
-                            ),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                          ),
-                        ),
-                      ),
+
                       const SizedBox(height: 20),
                       SizedBox(
                         width: double.infinity,

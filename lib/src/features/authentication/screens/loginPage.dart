@@ -78,6 +78,7 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Container(
@@ -90,12 +91,14 @@ class _loginPageState extends State<loginPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Image.asset(
-                  'assets/help.png',
-                  width: 70,
-                  height: 70,
+              const Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Text(
+                  "Help",
+                  style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontSize: 40
+                  ),
                 ),
               ),
               Padding(

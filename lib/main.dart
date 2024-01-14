@@ -1,3 +1,5 @@
+import 'package:donation_app/src/features/donationmode/donationmode_screen.dart';
+import 'package:donation_app/src/features/home/DonationDetails.dart';
 import 'package:donation_app/src/features/home/baseHomeActivity.dart';
 import 'package:donation_app/src/features/donationcart/mydonationbox.dart';
 import 'package:donation_app/src/features/intro/screens/onboarding_screen.dart';
@@ -22,9 +24,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MaterialApp(
-    home: Splash_Screen(),
-    // home: MyDonationBox(),
-    // home: OnBoardingScreen(),
+    // home: SplashScreen(),
+    // home: DonationsFragment(),
+    home: DonationMode(),
     debugShowCheckedModeBanner: false,
   ));
 }

@@ -1,5 +1,16 @@
+import 'dart:ui';
+
+import 'package:donation_app/src/common_widgets/bigbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+
+
+FlutterView view = WidgetsBinding.instance.platformDispatcher.views.first;
+// Dimensions in physical pixels (px)
+Size size = view.physicalSize / view.devicePixelRatio;
+double w = size.width;
+double h = size.height;
+
 
 class DonationsFragment extends StatelessWidget {
   const DonationsFragment({super.key});
@@ -34,253 +45,289 @@ class DonationsFragment extends StatelessWidget {
             backgroundColor: Colors.white, // Adjust background color to match other screens
           ),
       body: SafeArea(
-        minimum: const EdgeInsets.fromLTRB(25, 0, 25, 25),
-        child: Column(
+        minimum: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        child: Stack(
           children: [
-            Expanded(
-                child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          height: 270,
-                          width: 180,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const NetworkImage(
-                                    'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg'),
-                                fit: BoxFit.cover,
-                                colorFilter: ColorFilter.mode(
-                                    Colors.black.withOpacity(0.5),
-                                    BlendMode.darken),
-                              ),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: const Center(
-                            child: Text(
-                              "10+ \nImage",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10,),
-                      Expanded(
-                        child: Container(
-                          height: 270,
-                          width: 180,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30)),
-                          child: const VideoPlayerWidget(),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 30),
-                  const Text(
-                    "Education",
-                    style: TextStyle(fontSize: 16, color: Color(0xff209fa6)),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Row(
+            Column(
+              children: [
+                Expanded(
+                    child: SingleChildScrollView(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Education Dono for Poor Child",
-                              style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
-                              softWrap: true,
+                      const SizedBox(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 270,
+                              width: 180,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: const NetworkImage(
+                                        'https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg'),
+                                    fit: BoxFit.cover,
+                                    colorFilter: ColorFilter.mode(
+                                        Colors.black.withOpacity(0.5),
+                                        BlendMode.darken),
+                                  ),
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: const Center(
+                                child: Text(
+                                  "10+ \nImage",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
                             ),
-                            Text(
-                              "20 days left",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: Color(0xff9ca5bb),
-                                  fontWeight: FontWeight.w300),
-                            )
-                          ],
-                        ),
+                          ),
+                          const SizedBox(width: 10,),
+                          Expanded(
+                            child: Container(
+                              height: 270,
+                              width: 180,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: const VideoPlayerWidget(),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 30),
+                      const Text(
+                        "Education",
+                        style: TextStyle(fontSize: 16, color: Color(0xff209fa6)),
                       ),
                       const SizedBox(
-                        width: 50,
+                        height: 15,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          for (int i = 0; i < random_images.length; i++)
-                            Container(
-                                margin: const EdgeInsets.symmetric(horizontal: 0),
-                                child: Align(
-                                  heightFactor: 0.75,
-                                  child: CircleAvatar(
-                                    radius: 10,
-                                    backgroundImage: NetworkImage(
-                                      random_images[i],
+                          const Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Education Dono for Poor Child",
+                                  style: TextStyle(
+                                      fontSize: 24, fontWeight: FontWeight.bold),
+                                  softWrap: true,
+                                ),
+                                Text(
+                                  "20 days left",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color(0xff9ca5bb),
+                                      fontWeight: FontWeight.w300),
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 50,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              for (int i = 0; i < random_images.length; i++)
+                                Container(
+                                    margin: const EdgeInsets.symmetric(horizontal: 0),
+                                    child: Align(
+                                      heightFactor: 0.75,
+                                      child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundImage: NetworkImage(
+                                          random_images[i],
+                                        ),
+                                      ),
+                                    )),
+                              Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 0),
+                                  child: const Align(
+                                    heightFactor: 0.5,
+                                    child: CircleAvatar(
+                                        radius: 10,
+                                        backgroundColor: Color(0xff209fa6),
+                                        child: Text(
+                                          "25",
+                                          style: TextStyle(
+                                              fontSize: 8, color: Colors.white),
+                                        )),
+                                  )),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 30),
+                      Row(
+                        children: [
+
+                          Row(
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xff209fa6),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.my_location,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Raised",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color(0xff9ca5bb),
+                                      fontWeight: FontWeight.w300,
                                     ),
                                   ),
-                                )),
-                          Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 0),
-                              child: const Align(
-                                heightFactor: 0.5,
-                                child: CircleAvatar(
-                                    radius: 10,
-                                    backgroundColor: Color(0xff209fa6),
-                                    child: Text(
-                                      "25",
-                                      style: TextStyle(
-                                          fontSize: 8, color: Colors.white),
-                                    )),
-                              )),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 30),
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                color: const Color(0xff209fa6),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: const Center(
-                              child: Icon(
-                                Icons.my_location,
-                                color: Colors.white,
+                                  Text(
+                                    "\$10.000",
+                                    style: TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold),
+                                  )
+                                ],
                               ),
-                            ),
+                            ],
                           ),
-                          const SizedBox(width: 10),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          Spacer(),
+                          Row(
                             children: [
-                              Text(
-                                "Target Amount",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Color(0xff9ca5bb),
-                                  fontWeight: FontWeight.w300,
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xff209fa6),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.my_location,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                              Text(
-                                "\$10.000",
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
-                              )
+                              const SizedBox(width: 10),
+                              const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Target Amount",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color(0xff9ca5bb),
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
+                                  Text(
+                                    "\$10.000",
+                                    style: TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
                             ],
                           ),
                         ],
                       ),
-                      const SizedBox(width: 30),
-                      Row(
+                      const SizedBox(height: 20),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                color: const Color(0xff209fa6),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: const Center(
-                              child: Icon(
-                                Icons.my_location,
-                                color: Colors.white,
-                              ),
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundImage: NetworkImage(
+                              'https://pbs.twimg.com/profile_images/1249432648684109824/J0k1DN1T_400x400.jpg',
                             ),
                           ),
-                          const SizedBox(width: 10),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Raised",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Color(0xff9ca5bb),
-                                  fontWeight: FontWeight.w300,
-                                ),
-                              ),
-                              Text(
-                                "\$10.000",
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
-                              )
-                            ],
+                          Text(
+                            " by ",
+                            style: TextStyle(fontSize: 24),
+                          ),
+                          Text(
+                            "NCAPA",
+                            style: TextStyle(
+                                fontSize: 24,
+                                color: Color(0xff209fa6),
+                                fontWeight: FontWeight.w600),
                           ),
                         ],
                       ),
+                      const SizedBox(height: 20),
+                      const Text(
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                        style: TextStyle(fontSize: 16),
+                        softWrap: true,
+                      ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundImage: NetworkImage(
-                          'https://pbs.twimg.com/profile_images/1249432648684109824/J0k1DN1T_400x400.jpg',
+                ),
+                ),
+
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 70,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      showModalBottomSheet<void>(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                            decoration: BoxDecoration(
+                                color: const Color(0xff209fa6),
+                                borderRadius: BorderRadius.circular(10)),
+                            height: 500,
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  const Text('Modal BottomSheet'),
+                                  ElevatedButton(
+                                    child: const Text('Close BottomSheet'),
+                                    onPressed: () => Navigator.pop(context),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF209FA6),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius:BorderRadius.all(Radius.circular(20)),
                         ),
                       ),
-                      Text(
-                        " by ",
-                        style: TextStyle(fontSize: 24),
+                      child: const Text("Donate",
+                      style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
                       ),
-                      Text(
-                        "NCAPA",
-                        style: TextStyle(
-                            fontSize: 24,
-                            color: Color(0xff209fa6),
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  const Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-                    style: TextStyle(fontSize: 16),
-                    softWrap: true,
-                  ),
-                ],
-              ),
-            )),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: double.infinity,
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                height: 70,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff209fa6),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text('Donate',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600)),
                 ),
               ),
             ),
@@ -290,6 +337,7 @@ class DonationsFragment extends StatelessWidget {
     );
   }
 }
+
 
 class VideoPlayerWidget extends StatelessWidget {
   const VideoPlayerWidget({super.key});

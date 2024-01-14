@@ -6,7 +6,6 @@ import 'package:donation_app/src/features/help_faq/help_faq_page.dart';
 import 'package:donation_app/src/features/history/historypage.dart';
 import 'package:donation_app/src/features/profile/profilePage.dart';
 import 'package:donation_app/src/features/settings/settingspage.dart';
-import 'package:donation_app/src/features/authentication/screens/signIn.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
