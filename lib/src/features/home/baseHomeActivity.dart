@@ -1,7 +1,7 @@
 
-import 'package:donation_app/feedPage.dart';
+import 'package:donation_app/src/features/home/feedPage.dart';
 import 'package:donation_app/main.dart';
-import 'package:donation_app/hamburgerMenu.dart';
+import 'package:donation_app/src/features/home/hamburgerMenu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';

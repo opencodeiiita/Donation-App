@@ -1,5 +1,6 @@
-import 'package:donation_app/donationcart/item_card.dart';
-import 'package:donation_app/donationcart/iconbutton.dart';
+import 'package:donation_app/src/features/donationcart/item_card.dart';
+import 'package:donation_app/src/features/donationcart/iconbutton.dart';
+import 'package:donation_app/src/features/donationmode/donationmode_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'list_cart_item.dart';
@@ -29,7 +30,12 @@ class _MyDonationBoxState extends State<MyDonationBox> {
             title: const Text("My Donation Box", style: TextStyle(color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.w600),),
             leading: BackButton(),
             actions: [cart.length!=0?TextButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DonationMode()),
+                );
+              },
                 child: Text("confirm",
                   style: TextStyle(color: Colors.black),
                 ),
@@ -80,6 +86,7 @@ class _MyDonationBoxState extends State<MyDonationBox> {
                     context: context,
                     builder: (BuildContext context){
                       return AlertDialog(
+
                         scrollable: true,
                         content: Container(
                           child: Column(

@@ -1,4 +1,4 @@
-import 'package:donation_app/baseHomeActivity.dart';
+import 'package:donation_app/src/features/home/baseHomeActivity.dart';
 import 'package:flutter/material.dart';
 
 void main() {

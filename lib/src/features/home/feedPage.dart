@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:donation_app/DonationDetails.dart';
-import 'package:donation_app/Donation_card.dart';
-import 'package:donation_app/create_fund_page.dart';
+import 'package:donation_app/src/features/home/Donation_card.dart';
+import 'package:donation_app/src/features/createfund/create_fund_page.dart';
+import 'package:donation_app/src/features/home/donations_fragment.dart';
 import 'package:flutter/material.dart';
 
 /*
@@ -150,7 +150,7 @@ class _feedPageState extends State<feedPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const DonationDetails(),
+                                    builder: (context) => const DonationsFragment(),
                                   ),
                                 );
                               },

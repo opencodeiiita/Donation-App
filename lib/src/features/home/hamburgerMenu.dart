@@ -1,17 +1,16 @@
 
-import 'package:donation_app/create_fund_page.dart';
-import 'package:donation_app/donationcart/mydonationbox.dart';
-import 'package:donation_app/donations_fragment.dart';
-import 'package:donation_app/help_faq_page.dart';
-import 'package:donation_app/historypage.dart';
-import 'package:donation_app/profilePage.dart';
-import 'package:donation_app/settingspage.dart';
-import 'package:donation_app/signIn.dart';
+import 'package:donation_app/src/features/createfund/create_fund_page.dart';
+import 'package:donation_app/src/features/donationcart/mydonationbox.dart';
+import 'package:donation_app/src/features/home/donations_fragment.dart';
+import 'package:donation_app/src/features/help_faq/help_faq_page.dart';
+import 'package:donation_app/src/features/history/historypage.dart';
+import 'package:donation_app/src/features/profile/profilePage.dart';
+import 'package:donation_app/src/features/settings/settingspage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'loginPage.dart';
+import '../authentication/screens/loginPage.dart';
 
 const tealLikeColor = Color.fromARGB(255, 32, 159, 166);
 const whiteg =Color.fromARGB(255,222,240,241);

@@ -50,6 +50,9 @@ dependencies:
   image_picker: ^1.0.6
   firebase_storage: ^11.6.0
   google_sign_in: ^6.2.1
+  smooth_page_indicator: ^1.1.0
+  bottom_drawer: ^0.0.5
+  date_field: ^4.0.1
 
 
 dev_dependencies:

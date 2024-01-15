@@ -1,11 +1,11 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:donation_app/twoscreen.dart';
+import 'package:donation_app/src/features/intro/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-class Splash_Screen extends StatelessWidget {
-  const Splash_Screen({super.key, Key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key, Key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,6 @@ class Splash_Screen extends StatelessWidget {
 
         //Color(RGBA(32,159,166,255))
         splashTransition: SplashTransition.scaleTransition,
-        nextScreen: const TwoScreen());
+        nextScreen: const OnBoardingScreen());
   }
 }

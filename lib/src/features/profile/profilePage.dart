@@ -1,5 +1,5 @@
-import 'package:donation_app/achievements_screen.dart';
-import 'package:donation_app/profile_screen.dart';
+import 'package:donation_app/src/features/profile/achievements_screen.dart';
+import 'package:donation_app/src/features/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class profilePage extends StatefulWidget {
@@ -33,7 +33,7 @@ class _profilePageState extends State<profilePage> with SingleTickerProviderStat
         bottom: TabBar(
           tabs: [
             Tab(child: Text("Profile",style: TextStyle(fontSize: 18),),),
-            Tab(child: Text("Achievemenats",style: TextStyle(fontSize: 18),),),
+            Tab(child: Text("Achievements",style: TextStyle(fontSize: 18),),),
           ], indicatorColor: Color.fromARGB(255, 32, 159, 166),
           controller: _tabController,
           labelColor: Color.fromARGB(255, 32, 159, 166),
