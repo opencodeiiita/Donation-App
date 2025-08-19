@@ -1,13 +1,10 @@
 # Donation App
+**Project maintainer**
+Gaurav Chhetri
 
 ## 🚀What issue does Donation App address?
 **Our app establishes a two-way connection between NGOs and donors. NGOs can directly communicate with donors, and vice versa. Essentially, it serves as a centralized hub for managing donations and specifying the organizations that will benefit from the contributions.**</p>
 
-## 🏆Our Top Contributors
-
-<a href="https://github.com/opencodeiiita/Donation-App/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=opencodeiiita/Donation-App"/>
-</a>
 
 ## 🧷Getting Started
 - [Setup Git](https://git-scm.com/downloads)
